@@ -1,16 +1,10 @@
 # FastAPI Notes
 
-> Notes from CampusX YouTube Playlist on FastAPI.
-> Language: Hinglish (Hindi + English mixed explanation).
-> New topics are appended below as transcriptions are provided.
-
----
-
 <!-- New sections will be appended below this line -->
 
 ---
 
-## Topic 5: FastAPI Setup & First API (Hello World)
+## FastAPI Setup & First API (Hello World)
 
 ### 1. Installation & Environment Setup
 
