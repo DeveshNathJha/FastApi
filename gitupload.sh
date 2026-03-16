@@ -20,4 +20,7 @@ git remote add origin https://github.com/DeveshNathJha/FastApi.git
 # Push project to GitHub
 git push -u origin main
 
+# Confirmation message
+echo "Project successfully pushed to GitHub!"
+
 # Run --bash gitupload.sh
