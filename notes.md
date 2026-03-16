@@ -750,7 +750,7 @@ Yahi topic seedha ML/AI ka core use case hai. Key takeaways:
 
 ---
 
-## Topic 6: FastAPI Kya Hai? — Starlette aur Pydantic Ka Role
+## Topic 6: FastAPI Kya Hai? - Starlette aur Pydantic Ka Role
 
 ### 1. Introduction
 
@@ -773,7 +773,7 @@ FastAPI ke creator ne in dono libraries ko uthaya aur inhein combine karke FastA
 
 ---
 
-### 3. Starlette Ka Role — HTTP Request/Response Engine
+### 3. Starlette Ka Role - HTTP Request/Response Engine
 
 Jab aap koi bhi API banate ho, tab API ka kaam hota hai:
 1. Client/User se **HTTP request receive** karna
@@ -782,18 +782,18 @@ Jab aap koi bhi API banate ho, tab API ka kaam hota hai:
 
 **FastAPI mein yeh poora HTTP layer Starlette handle karta hai.**
 
-- Jab aapki FastAPI application par koi HTTP request aata hai → **Starlette us request ko receive karta hai**
-- Jab response wapas bhejna hota hai → **Starlette woh response banake bhejta hai**
+- Jab aapki FastAPI application par koi HTTP request aata hai  **Starlette us request ko receive karta hai**
+- Jab response wapas bhejna hota hai  **Starlette woh response banake bhejta hai**
 
 > *"Starlette manages how your API receives requests and sends back responses."*
 
 ---
 
-### 4. Pydantic Ka Role — Data Validation Library
+### 4. Pydantic Ka Role - Data Validation Library
 
 Python mein by default **strict type checking / type hinting nahi hoti**. Pydantic yeh gap fill karta hai.
 
-**Pydantic ek Data Validation Library hai** — yeh check karta hai ki jo data aapke paas aa raha hai woh sahi format mein hai ya nahi.
+**Pydantic ek Data Validation Library hai** - yeh check karta hai ki jo data aapke paas aa raha hai woh sahi format mein hai ya nahi.
 
 #### Practical Example:
 
@@ -803,9 +803,9 @@ Maan lo aapne ek API banai jo:
 - Batata hai ki un dono stations ke beech us particular date pe **kaun-kaun si trains chal rahi hain**
 
 Ab API banate waqt aapko khud check karna padta:
-- ✅ Kya station ka naam **string format** mein hai?
-- ✅ Kya woh station **hamari given list of stations mein** hai ya nahi?
-- ✅ Kya date **valid format** mein hai?
+-  Kya station ka naam **string format** mein hai?
+-  Kya woh station **hamari given list of stations mein** hai ya nahi?
+-  Kya date **valid format** mein hai?
 
 Yeh saara **data validation ka kaam** aapko manually likhna padta tha. Lekin agar aap **Pydantic** use karo, toh yeh sara kaam **behind the scenes Pydantic automatically** karke deta hai.
 
@@ -818,8 +818,8 @@ Yeh saara **data validation ka kaam** aapko manually likhna padta tha. Lekin aga
 | Term | Explanation |
 |------|-------------|
 | **FastAPI** | Modern, high-performance Python web framework for building APIs |
-| **Starlette** | FastAPI ka HTTP engine — requests receive karta hai aur responses bhejta hai |
-| **Pydantic** | Data validation library — incoming API data ka format aur type check karta hai |
+| **Starlette** | FastAPI ka HTTP engine - requests receive karta hai aur responses bhejta hai |
+| **Pydantic** | Data validation library - incoming API data ka format aur type check karta hai |
 | **HTTP Request** | Client ki taraf se server ko bheja gaya message |
 | **HTTP Response** | Server ki taraf se client ko wapas bheja gaya data |
 | **Data Validation** | Check karna ki aane wala data sahi type aur format mein hai ya nahi |
@@ -831,9 +831,9 @@ Yeh saara **data validation ka kaam** aapko manually likhna padta tha. Lekin aga
 
 - **FastAPI** ek modern Python web framework hai jisse aap **high-performance, industry-grade APIs** Python mein bana sakte ho.
 - FastAPI internally **do Python libraries** ke upar bana hai:
-  1. **Starlette** → HTTP requests receive karta hai aur responses bhejta hai (web/routing engine)
-  2. **Pydantic** → Incoming API data ka validation perform karta hai (data validation engine)
-- Python mein by default strict type checking nahi hoti — **Pydantic is gap ko fill karta hai**.
+  1. **Starlette**  HTTP requests receive karta hai aur responses bhejta hai (web/routing engine)
+  2. **Pydantic**  Incoming API data ka validation perform karta hai (data validation engine)
+- Python mein by default strict type checking nahi hoti - **Pydantic is gap ko fill karta hai**.
 - FastAPI mein Pydantic automatically **behind the scenes** data validation karta hai, jisse aapko manually validation code nahi likhna padta.
 
 ---
@@ -844,33 +844,33 @@ Yeh saara **data validation ka kaam** aapko manually likhna padta tha. Lekin aga
 
 FastAPI se pehle bhi Python mein API banane ke frameworks exist karte the. Toh phir FastAPI ke creators ko yeh zaroorat kyun padi ki ek naya framework banayein?
 
-Iske peeche **do primary reasons** the — aur yahi do problems FastAPI ki **do core philosophies** ban gayi.
+Iske peeche **do primary reasons** the - aur yahi do problems FastAPI ki **do core philosophies** ban gayi.
 
 ---
 
 ### 2. Do Problems Jinhe FastAPI Ne Solve Kiya
 
-**Problem 1 — Performance Issue:**
+**Problem 1 - Performance Issue:**
 Puraane frameworks (jaise Flask) mein APIs ka response time slow hota tha. Latency issues hote the, jo industry-grade applications ke liye acceptable nahi hai.
 
-**Problem 2 — Zyada Code Likhna Padta Tha:**
+**Problem 2 - Zyada Code Likhna Padta Tha:**
 Puraane frameworks mein API ka code likhne mein bahut mehnat lagti thi. Boilerplate code bahut zyada hota tha, aur unnecessary code likhna padta tha sirf API ko effectively run karne ke liye.
 
 ---
 
 ### 3. FastAPI Ki Do Core Philosophies
 
-**Philosophy 1 — Fast to Run:**
+**Philosophy 1 - Fast to Run:**
 FastAPI mein bani APIs bahut fast hoti hain execute hone mein. Woh concurrent users handle kar sakti hain aur latency bahut kam hoti hai.
 
-**Philosophy 2 — Fast to Code:**
+**Philosophy 2 - Fast to Code:**
 FastAPI mein API banana ka process bahut fast hai. Bahut kam lines of code mein bahut achchi API build kar paate ho.
 
-> Yahi wajah hai ki is framework ka naam "FastAPI" rakha gaya — fast to run aur fast to code, dono.
+> Yahi wajah hai ki is framework ka naam "FastAPI" rakha gaya - fast to run aur fast to code, dono.
 
 ---
 
-### 4. API Ka Internal Information Flow — Web Server + SGI + API Code
+### 4. API Ka Internal Information Flow - Web Server + SGI + API Code
 
 Pehle yeh samajhna zaroori hai ki ek API deploy hone ke baad kaam kaise karti hai.
 
@@ -879,8 +879,8 @@ Pehle yeh samajhna zaroori hai ki ek API deploy hone ke baad kaam kaise karti ha
 **Deploy karne ka matlab kya hai?**
 Jab aap API ko AWS jaise cloud par deploy karte ho, toh aap essentially **do cheezein** bhejte ho:
 
-1. **API ka Code** — jahan business logic likha hota hai (features lo, model load karo, prediction generate karo, response return karo)
-2. **Web Server** — jo AWS ki machines ke ports ke through continuously incoming HTTP requests ko sunne ki koshish karta rehta hai
+1. **API ka Code** - jahan business logic likha hota hai (features lo, model load karo, prediction generate karo, response return karo)
+2. **Web Server** - jo AWS ki machines ke ports ke through continuously incoming HTTP requests ko sunne ki koshish karta rehta hai
 
 **Kisi bhi API mein ye do components hote hain:**
 
@@ -923,11 +923,11 @@ SGI ek **translator** hai jo Web Server aur API Code ke beech **two-way communic
 
 ---
 
-### 6. Flask vs FastAPI — Architecture Comparison
+### 6. Flask vs FastAPI - Architecture Comparison
 
 In dono frameworks ke beech **teen key differences** hain:
 
-#### Flask Architecture (WSGI — Synchronous)
+#### Flask Architecture (WSGI - Synchronous)
 
 | Component | Flask Mein |
 |-----------|-----------|
@@ -944,9 +944,9 @@ Agar 5 clients ne ek saath request bheja, toh:
 - Jab tak Client 1 ka kaam complete nahi hota, baaki clients wait karenge
 - Resources blocked rahenge
 
-**Gunicorn ki bhi same limitation hai** — kyunki yeh WSGI par based hai, isliye synchronous tarike se process karta hai, jo high-concurrency scenarios mein latency aur performance issues create karta hai.
+**Gunicorn ki bhi same limitation hai** - kyunki yeh WSGI par based hai, isliye synchronous tarike se process karta hai, jo high-concurrency scenarios mein latency aur performance issues create karta hai.
 
-#### FastAPI Architecture (ASGI — Asynchronous)
+#### FastAPI Architecture (ASGI - Asynchronous)
 
 | Component | FastAPI Mein |
 |-----------|-------------|
@@ -956,14 +956,14 @@ Agar 5 clients ne ek saath request bheja, toh:
 | API Code Style | Async/Await supported |
 
 **ASGI ka sabse bada advantage:**
-ASGI **asynchronous** nature ka hota hai — yeh **concurrent processing** kar sakta hai. Ek saath multiple requests parallel mein process ho sakti hain.
+ASGI **asynchronous** nature ka hota hai - yeh **concurrent processing** kar sakta hai. Ek saath multiple requests parallel mein process ho sakti hain.
 
 **Uvicorn ka advantage:**
 Uvicorn ek high-performance ASGI server hai. Gunicorn ke comparison mein Uvicorn generally preferred hai apni asynchronous capabilities ki wajah se.
 
 ---
 
-### 7. Async/Await — FastAPI Mein Concurrency Ka Raaz
+### 7. Async/Await - FastAPI Mein Concurrency Ka Raaz
 
 FastAPI Python ke `async` aur `await` feature ko aggressively support karta hai, jo is poore pipeline ko asynchronous banata hai.
 
@@ -989,7 +989,7 @@ ML Model ne Request 1 ka result diya --> Response complete kiya
 
 ---
 
-### 8. Flask vs FastAPI — Side by Side Summary Table
+### 8. Flask vs FastAPI - Side by Side Summary Table
 
 | Aspect | Flask | FastAPI |
 |--------|-------|---------|
@@ -1002,7 +1002,7 @@ ML Model ne Request 1 ka result diya --> Response complete kiya
 
 ---
 
-### 9. Waiter Analogy — Simplest Explanation
+### 9. Waiter Analogy - Simplest Explanation
 
 **Flask (Synchronous Waiter):**
 Customer aaya, waiter ne order liya, kitchen mein diya aur wahan khada ho gaya. Jab tak khana nahi bana, waiter kisi aur customer ke paas nahi gaya. Time waste hua.
@@ -1018,13 +1018,13 @@ Customer aaya, waiter ne order liya, kitchen mein diya. Waiter ko pata hai khana
 
 | Term | Explanation |
 |------|-------------|
-| SGI | Server Gateway Interface — web server aur Python app ke beech translator |
-| WSGI | Web Server Gateway Interface — purana synchronous protocol, Flask mein use hota hai |
-| ASGI | Asynchronous Server Gateway Interface — modern async protocol, FastAPI mein use hota hai |
+| SGI | Server Gateway Interface - web server aur Python app ke beech translator |
+| WSGI | Web Server Gateway Interface - purana synchronous protocol, Flask mein use hota hai |
+| ASGI | Asynchronous Server Gateway Interface - modern async protocol, FastAPI mein use hota hai |
 | Werkzeug | Flask mein WSGI implement karne wali library |
 | Starlette | FastAPI mein ASGI implement karne wali library |
 | Gunicorn | Flask ka WSGI HTTP web server |
-| Uvicorn | FastAPI ka ASGI web server — high performance aur asynchronous |
+| Uvicorn | FastAPI ka ASGI web server - high performance aur asynchronous |
 | Synchronous | Ek request poori hone ke baad hi doosri shuru hoti hai (blocking) |
 | Asynchronous | Multiple requests ek saath concurrent mein process ho sakti hain (non-blocking) |
 | Async/Await | Python syntax jo non-blocking asynchronous code likhne mein use hota hai |
@@ -1037,19 +1037,19 @@ Customer aaya, waiter ne order liya, kitchen mein diya. Waiter ko pata hai khana
 - FastAPI do core philosophies par bana hai: **Fast to Run** (high performance, concurrent) aur **Fast to Code** (less boilerplate, faster development).
 - Kisi bhi API mein do key components hote hain: **Web Server** (HTTP requests sunna) aur **API Code** (business logic).
 - In dono ke beech ek **SGI layer** hoti hai jo HTTP aur Python formats ke beech translation karta hai.
-- **Flask** WSGI protocol use karta hai jo **synchronous aur blocking** hai — ek time par ek hi request.
-- **FastAPI** ASGI protocol use karta hai (Starlette library ke through) jo **asynchronous** hai — concurrent requests handle kar sakta hai.
-- **Uvicorn** (FastAPI) vs **Gunicorn** (Flask) — Uvicorn asynchronous hai, isliye high performance deliver karta hai.
+- **Flask** WSGI protocol use karta hai jo **synchronous aur blocking** hai - ek time par ek hi request.
+- **FastAPI** ASGI protocol use karta hai (Starlette library ke through) jo **asynchronous** hai - concurrent requests handle kar sakta hai.
+- **Uvicorn** (FastAPI) vs **Gunicorn** (Flask) - Uvicorn asynchronous hai, isliye high performance deliver karta hai.
 - **Async/Await** Python feature FastAPI ke API code ko bhi asynchronous banata hai, jisse poora pipeline non-blocking ho jaata hai.
-- Yahi combination — ASGI + Uvicorn + Starlette + Async/Await — FastAPI ko **Fast to Run** banata hai.
+- Yahi combination - ASGI + Uvicorn + Starlette + Async/Await - FastAPI ko **Fast to Run** banata hai.
 
 ---
 
-## Topic 8: FastAPI — Fast to Code Philosophy (Teen Reasons)
+## Topic 8: FastAPI - Fast to Code Philosophy (Teen Reasons)
 
 ### 1. Introduction
 
-FastAPI ki doosri core philosophy hai — **Fast to Code**.
+FastAPI ki doosri core philosophy hai - **Fast to Code**.
 
 Iska matlab yeh hai ki FastAPI ke creators ne yeh ensure kiya ki jab bhi koi FastAPI use karke API build kare, usse bahut zyada code nahi likhna padega. Bahut kam code mein bahut kuch achieve ho sake.
 
@@ -1057,21 +1057,21 @@ Teen major aspects hain jinki wajah se FastAPI mein coding process bahut fast ho
 
 ---
 
-### 2. Aspect 1 — Automatic Input Validation (Pydantic Integration)
+### 2. Aspect 1 - Automatic Input Validation (Pydantic Integration)
 
-Python mein by default **strict type checking nahi hoti**. Python ke variables dynamically create hote hain, aur unki values runtime par change ho sakti hain. Ek variable `a` ka value `2` bhi ho sakta hai aur koi string bhi — koi rokta nahi.
+Python mein by default **strict type checking nahi hoti**. Python ke variables dynamically create hote hain, aur unki values runtime par change ho sakti hain. Ek variable `a` ka value `2` bhi ho sakta hai aur koi string bhi - koi rokta nahi.
 
 Yeh feature achha hai flexibility ke liye, lekin jab aap industry-grade, enterprise-level application bana rahe ho, toh aap chahte ho ki **type-related errors generate na hon**.
 
 **FastAPI ka solution:** FastAPI mein by default **Pydantic ka support** built-in hai.
 
-Jab bhi aap FastAPI mein koi endpoint banate ho, aap wahan specify kar sakte ho ki us endpoint ko jo input mil raha hai woh **kaunse data type ka hona chahiye**. FastAPI aur Pydantic ka yeh integration bahut tightly coupled hai — behind the scenes kaafi kuch FastAPI khud handle kar leta hai, aapko manually validation code nahi likhna padta.
+Jab bhi aap FastAPI mein koi endpoint banate ho, aap wahan specify kar sakte ho ki us endpoint ko jo input mil raha hai woh **kaunse data type ka hona chahiye**. FastAPI aur Pydantic ka yeh integration bahut tightly coupled hai - behind the scenes kaafi kuch FastAPI khud handle kar leta hai, aapko manually validation code nahi likhna padta.
 
 > Aage ke videos mein dikhaaya jaayega ki practically kaise Pydantic se automatic input validation karte hain.
 
 ---
 
-### 3. Aspect 2 — Auto-Generated Interactive Documentation
+### 3. Aspect 2 - Auto-Generated Interactive Documentation
 
 Software development mein sirf code likhna hi kafi nahi hota. Ek solid **documentation** banana bhi utna hi zaroori hai, taaki aapke API ke users yeh samajh sakein:
 
@@ -1083,13 +1083,13 @@ Yeh documentation banana khud mein time-consuming kaam hai.
 
 **FastAPI ka solution:** Jaise-jaise aap code likhte jaate ho, FastAPI **automatically documentation generate** karta chala jaata hai. Aapko alag se documentation likhne ki zaroorat nahi padti.
 
-Aur sabse best part yeh hai ki yeh ek **interactive documentation** hoti hai — aap sirf API ke baare mein padh hi nahi sakte, balki directly wahan se **API ke saath interact aur test bhi kar sakte ho** (Swagger UI ke through).
+Aur sabse best part yeh hai ki yeh ek **interactive documentation** hoti hai - aap sirf API ke baare mein padh hi nahi sakte, balki directly wahan se **API ke saath interact aur test bhi kar sakte ho** (Swagger UI ke through).
 
 > Is feature ka practical demonstration is video mein aage dikhaaya jaayega.
 
 ---
 
-### 4. Aspect 3 — Modern Framework with Seamless Integrations
+### 4. Aspect 3 - Modern Framework with Seamless Integrations
 
 FastAPI ek **modern framework** hai, jiska matlab hai ki yeh aaj ki popular aur production-grade libraries ke saath bahut seamlessly integrate hota hai. Aapko alag-alag cheezein jodhne ke liye zyada kaam nahi karna padta.
 
@@ -1102,16 +1102,16 @@ FastAPI ek **modern framework** hai, jiska matlab hai ki yeh aaj ki popular aur 
 | PyTorch | Deep Learning / Research |
 
 **Authentication:**
-- **OAuth** — Login, authentication aur authorization ke liye seamless integration milta hai.
+- **OAuth** - Login, authentication aur authorization ke liye seamless integration milta hai.
 
 **Database:**
-- **SQLAlchemy** — SQL databases ke saath kaam karne ke liye tight integration.
+- **SQLAlchemy** - SQL databases ke saath kaam karne ke liye tight integration.
 
 **Deployment:**
-- **Docker** — Containerization ke liye directly compatible.
-- **Kubernetes** — Production-scale deployment ke liye integration available hai.
+- **Docker** - Containerization ke liye directly compatible.
+- **Kubernetes** - Production-scale deployment ke liye integration available hai.
 
-> Yahi wajah hai ki FastAPI sirf API banane ka tool nahi hai — yeh ek complete ecosystem ke saath kaam karta hai jo modern production applications ke liye zaruri hai.
+> Yahi wajah hai ki FastAPI sirf API banane ka tool nahi hai - yeh ek complete ecosystem ke saath kaam karta hai jo modern production applications ke liye zaruri hai.
 
 ---
 
@@ -1119,27 +1119,27 @@ FastAPI ek **modern framework** hai, jiska matlab hai ki yeh aaj ki popular aur 
 
 | Aspect | Kya milta hai FastAPI mein |
 |--------|---------------------------|
-| Automatic Input Validation | Pydantic ka built-in support — type errors automatically handle hote hain |
+| Automatic Input Validation | Pydantic ka built-in support - type errors automatically handle hote hain |
 | Auto-generated Interactive Docs | Code likhte waqt hi documentation ban jaati hai (Swagger UI) |
 | Modern Library Integrations | ML, Auth, DB, Deployment tools ke saath seamless compatibility |
 
 ---
 
-### 6. Overall FastAPI Summary — Dono Philosophies
+### 6. Overall FastAPI Summary - Dono Philosophies
 
 FastAPI ki do core philosophies hain aur dono mein yeh shine karta hai:
 
-**Philosophy 1 — Fast to Run (Performance):**
-- ASGI protocol (Starlette library ke through) — asynchronous aur concurrent
-- Uvicorn web server — high performance
-- Async/Await support — non-blocking pipeline
+**Philosophy 1 - Fast to Run (Performance):**
+- ASGI protocol (Starlette library ke through) - asynchronous aur concurrent
+- Uvicorn web server - high performance
+- Async/Await support - non-blocking pipeline
 
-**Philosophy 2 — Fast to Code (Developer Productivity):**
+**Philosophy 2 - Fast to Code (Developer Productivity):**
 - Pydantic ka automatic input validation
 - Auto-generated interactive documentation (Swagger UI)
 - Seamless integrations with modern ML, DB, and deployment tools
 
-> In dono philosophies ki wajah se hi is framework ka naam "FastAPI" rakha gaya — fast to run aur fast to code.
+> In dono philosophies ki wajah se hi is framework ka naam "FastAPI" rakha gaya - fast to run aur fast to code.
 
 ---
 
@@ -1159,15 +1159,15 @@ FastAPI ki do core philosophies hain aur dono mein yeh shine karta hai:
 
 ---
 
-## Topic 9: FastAPI Installation aur Hello World API — Code Demo
+## Topic 9: FastAPI Installation aur Hello World API - Code Demo
 
-### 1. Setup — Virtual Environment aur Installation
+### 1. Setup - Virtual Environment aur Installation
 
 FastAPI project shuru karne ke liye steps:
 
-**Step 1 — Project folder banao aur VS Code mein open karo.**
+**Step 1 - Project folder banao aur VS Code mein open karo.**
 
-**Step 2 — Virtual environment create karo:**
+**Step 2 - Virtual environment create karo:**
 ```bash
 # Windows / Mac:
 python -m venv myenv
@@ -1176,15 +1176,15 @@ python -m venv myenv
 python3 -m venv myenv
 ```
 
-> **Linux Note:** Linux par `python` command by default available nahi hoti — sirf `python3` hoti hai. Agar `python` use karo toh error aayega: *"Command 'python' not found"*. Linux par hamesha `python3` use karo.
+> **Linux Note:** Linux par `python` command by default available nahi hoti - sirf `python3` hoti hai. Agar `python` use karo toh error aayega: *"Command 'python' not found"*. Linux par hamesha `python3` use karo.
 
-**Step 3 — Virtual environment activate karo:**
+**Step 3 - Virtual environment activate karo:**
 - Windows: `myenv\Scripts\activate`
 - Mac/Linux: `source myenv/bin/activate`
 
-> **Important:** Ek baar virtual environment activate ho jaane ke baad, andar `python` aur `pip` dono normally kaam karte hain (bina `3` suffix ke) — venv yeh automatically set kar leta hai.
+> **Important:** Ek baar virtual environment activate ho jaane ke baad, andar `python` aur `pip` dono normally kaam karte hain (bina `3` suffix ke) - venv yeh automatically set kar leta hai.
 
-**Step 4 — Required libraries install karo:**
+**Step 4 - Required libraries install karo:**
 ```bash
 pip install fastapi uvicorn
 ```
@@ -1193,7 +1193,7 @@ pip install fastapi uvicorn
 
 ---
 
-### 2. Pehli API Banana — `main.py`
+### 2. Pehli API Banana - `main.py`
 
 Ek nayi file banao `main.py` naam se aur yeh code likho:
 
@@ -1219,20 +1219,20 @@ def about():
 | Part | Explanation |
 |------|-------------|
 | `from fastapi import FastAPI` | FastAPI class import karna |
-| `app = FastAPI()` | Application ka main object — yeh hamari poori API represent karta hai |
-| `@app.get("/")` | Decorator jo ek route define karta hai — yahan `/` home URL hai, `get` HTTP method hai |
+| `app = FastAPI()` | Application ka main object - yeh hamari poori API represent karta hai |
+| `@app.get("/")` | Decorator jo ek route define karta hai - yahan `/` home URL hai, `get` HTTP method hai |
 | `def hello()` | Is route par aane wali request ko handle karne wala function |
-| `return {"message": "Hello World"}` | Python dictionary — FastAPI automatically ise JSON mein convert karke response deta hai |
+| `return {"message": "Hello World"}` | Python dictionary - FastAPI automatically ise JSON mein convert karke response deta hai |
 
-**GET vs POST — Basic Samajh:**
-- **GET request** — Jab aap server se koi data fetch/read karna chahte ho
-- **POST request** — Jab aap server par koi data bhejna chahte ho
+**GET vs POST - Basic Samajh:**
+- **GET request** - Jab aap server se koi data fetch/read karna chahte ho
+- **POST request** - Jab aap server par koi data bhejna chahte ho
 
 Abhi hum server se data la ke dekhna chahte hain, isliye GET use kar rahe hain.
 
 ---
 
-### 3. Server Run Karna — Uvicorn Command
+### 3. Server Run Karna - Uvicorn Command
 
 ```bash
 uvicorn main:app --reload
@@ -1245,7 +1245,7 @@ uvicorn main:app --reload
 | `uvicorn` | ASGI server jo hamari application serve karega |
 | `main` | Python file ka naam (bina `.py` ke) |
 | `app` | FastAPI object ka naam jo `main.py` mein define kiya hai |
-| `--reload` | Dev mode flag — code save karte hi server automatically reload ho jaata hai |
+| `--reload` | Dev mode flag - code save karte hi server automatically reload ho jaata hai |
 
 Command run karne ke baad Uvicorn ek local URL par HTTP requests sunne lagta hai (e.g., `http://127.0.0.1:8000`).
 
@@ -1258,16 +1258,16 @@ Jab bhi aap code mein koi change karke save karte ho, server khud restart ho jaa
 
 | URL | Kaunsa Endpoint Hit Hoga |
 |-----|--------------------------|
-| `http://127.0.0.1:8000/` | `hello()` function — `{"message": "Hello World"}` |
-| `http://127.0.0.1:8000/about` | `about()` function — `{"message": "CampusX is..."}` |
+| `http://127.0.0.1:8000/` | `hello()` function - `{"message": "Hello World"}` |
+| `http://127.0.0.1:8000/about` | `about()` function - `{"message": "CampusX is..."}` |
 
 URL mein `/` laga ho ya na ho, home route ke liye dono equivalent hote hain.
 
 ---
 
-### 5. Auto-Generated Interactive Documentation — `/docs`
+### 5. Auto-Generated Interactive Documentation - `/docs`
 
-FastAPI ka ek standout feature — running server ke URL mein `/docs` append karo:
+FastAPI ka ek standout feature - running server ke URL mein `/docs` append karo:
 
 ```
 http://127.0.0.1:8000/docs
@@ -1278,7 +1278,7 @@ Yahan aapko **Swagger UI** ka ek page milega jahan:
 - Aapke saare endpoints automatically listed hote hain (abhi `/` aur `/about`)
 - Har endpoint ka type (GET/POST), parameters, aur return format clearly dikh ta hai
 - **"Try it out"** button se aap directly wahan se API ko test kar sakte ho bina Postman jaise kisi third-party software ke
-- **"Execute"** button click karne par response body, status code (200), server info, content-length — sab kuch wahan dikh jaata hai
+- **"Execute"** button click karne par response body, status code (200), server info, content-length - sab kuch wahan dikh jaata hai
 
 > Jaise-jaise aap naaye endpoints add karte jaate ho, `/docs` page automatically unhe uthaa leta hai. Koi extra documentation likhne ki zaroorat nahi.
 
@@ -1288,18 +1288,18 @@ Yahan aapko **Swagger UI** ka ek page milega jahan:
 
 - FastAPI project ke liye virtual environment banana aur usme `fastapi`, `uvicorn`, `pydantic` install karna recommended hai. Starlette automatically aa jaata hai.
 - `main.py` mein `FastAPI()` object banao, phir `@app.get("/route")` decorator se endpoints define karo.
-- Har endpoint ke liye ek Python function likhte hain jo dictionary return karta hai — FastAPI use JSON mein convert kar deta hai.
+- Har endpoint ke liye ek Python function likhte hain jo dictionary return karta hai - FastAPI use JSON mein convert kar deta hai.
 - Server run karne ke liye: `uvicorn main:app --reload`
 - `--reload` flag dev environment mein code changes par automatic server restart deta hai.
 - `http://127.0.0.1:8000/docs` par jaake auto-generated interactive Swagger documentation milti hai jahan se seedha API test bhi kar sakte ho.
 
 ---
 
-## Topic 7: Project Overview — Doctor's Clinic Patient Management API
+## Topic 7: Project Overview - Doctor's Clinic Patient Management API
 
 ### 1. Problem Statement
 
-Doctor ke clinic mein aaj bhi ek bahut common practice hai — woh ek **printed letterhead pe pen se prescription likhte hain**. Isme patient ka naam, city, age, gender, height, weight, BMI aur davaon ke naam hote hain. Doctor patient se kehte hain ki agli baar clinic (follow-up visit) par yeh document lekar आना.
+Doctor ke clinic mein aaj bhi ek bahut common practice hai - woh ek **printed letterhead pe pen se prescription likhte hain**. Isme patient ka naam, city, age, gender, height, weight, BMI aur davaon ke naam hote hain. Doctor patient se kehte hain ki agli baar clinic (follow-up visit) par yeh document lekar आना.
 
 **Problems with this offline approach:**
 
@@ -1312,7 +1312,7 @@ Doctor ke clinic mein aaj bhi ek bahut common practice hai — woh ek **printed 
 
 ---
 
-### 2. Solution — Online Patient Management App
+### 2. Solution - Online Patient Management App
 
 Ek **startup idea** hai: is poori offline system ko **online** le aana.
 
@@ -1320,11 +1320,11 @@ Ek **startup idea** hai: is poori offline system ko **online** le aana.
 - Har patient ka ek **digital profile** maintain kar sake
 - Profile mein: Patient Name, City, Age, Gender, Height, Weight, BMI (aur aage jaake aur bhi medical information)
 
-> **Note:** Is basic-level project mein hum Height, Weight aur BMI tak hi limited rahenge. But concept extensible hai — bahut saari aur cheezein add ki ja sakti hain.
+> **Note:** Is basic-level project mein hum Height, Weight aur BMI tak hi limited rahenge. But concept extensible hai - bahut saari aur cheezein add ki ja sakti hain.
 
 ---
 
-### 3. Hamara Kaam — API Develop Karna
+### 3. Hamara Kaam - API Develop Karna
 
 Hum **front-end application nahi bana rahe**. Front end banana front-end developers ka kaam hai.
 
@@ -1334,7 +1334,7 @@ Hum **front-end application nahi bana rahe**. Front end banana front-end develop
 
 - **Ideally:** Patient records ek **Database** mein store hone chahiye.
 - **Is basic project mein:** Hum ek **JSON file** use karenge storage ke liye.
-- Method bilkul same rehega — sirf database ki jagah JSON file hai.
+- Method bilkul same rehega - sirf database ki jagah JSON file hai.
 
 #### CRUD Operations (5 Endpoints)
 
@@ -1352,16 +1352,16 @@ Hum **front-end application nahi bana rahe**. Front end banana front-end develop
 
 ### 4. Summary
 
-- **Problem:** Doctor-patient records abhi offline hain — papers mislace hote hain, management mushkil hai.
+- **Problem:** Doctor-patient records abhi offline hain - papers mislace hote hain, management mushkil hai.
 - **Solution:** Ek online app jo doctor ko digital patient profiles create aur manage karne deti hai.
 - **Humara role:** Back-end engineers ke taur par hum is app ka **API layer develop karenge**.
 - **Storage:** Database ki jagah pehle **JSON file** use karenge (concept same rahega).
-- **API mein 5 endpoints honge:** Create, View All, View One, Update, Delete — yahi **CRUD operations** hain.
+- **API mein 5 endpoints honge:** Create, View All, View One, Update, Delete - yahi **CRUD operations** hain.
 - Future mein yeh API use karke koi bhi doctor-facing web/mobile app bana sakta hai.
 
 ---
 
-## Topic 8: HTTP Methods — CRUD aur Web Communication
+## Topic 8: HTTP Methods - CRUD aur Web Communication
 
 ### 1. Introduction
 
@@ -1371,22 +1371,22 @@ FastAPI mein aage badhne se pehle ek ek **bahut zaroori concept** samajhna chahi
 
 ### 2. Static vs Dynamic Software
 
-Pehle samajhte hain ki software ki duniya mein **do types of software** hote hain — based on **user interaction**:
+Pehle samajhte hain ki software ki duniya mein **do types of software** hote hain - based on **user interaction**:
 
 | Type | Matlab | Examples |
 |------|--------|---------|
 | **Static Software** | User sirf information receive karta hai. Bahut kam interaction hoti hai. One-way communication. | Calendar, Clock |
 | **Dynamic Software** | User actively interact karta hai. Two-way communication hoti hai. | MS Excel, MS Word, PowerPoint |
 
-> **Analogy:** Calendar ek **noticeboard** ki tarah hai — aap sirf padhte ho. MS Excel ek **whiteboard** ki tarah hai — aap likhte, mitaate, aur badlte bhi ho.
+> **Analogy:** Calendar ek **noticeboard** ki tarah hai - aap sirf padhte ho. MS Excel ek **whiteboard** ki tarah hai - aap likhte, mitaate, aur badlte bhi ho.
 
 ```
 Static Software:
-  User ──── reads ────▶ Software
+  User ──── reads ──── Software
   (One-way communication only)
 
 Dynamic Software:
-  User ◀────────────▶ Software
+  User ──────────── Software
   (Two-way: user sends data, software responds)
 ```
 
@@ -1394,7 +1394,7 @@ Hum **sirf dynamic software** ke baare mein aage baat karenge.
 
 ---
 
-### 3. CRUD — Sirf 4 Types of Interactions
+### 3. CRUD - Sirf 4 Types of Interactions
 
 Aap kisi bhi dynamic software ke saath **sirf 4 types ke interactions** kar sakte ho. Isse kaha jata hai **CRUD**:
 
@@ -1409,33 +1409,33 @@ Aap kisi bhi dynamic software ke saath **sirf 4 types ke interactions** kar sakt
 
 ```
 MS Excel ke saath kya-kya kar sakte ho?
-├── Nayi cells mein data enter karo        ──▶ CREATE
-├── Existing cells ka data dekho           ──▶ RETRIEVE
-├── Existing cells ka data badlo           ──▶ UPDATE
-└── Existing cells ko hata do              ──▶ DELETE
+├── Nayi cells mein data enter karo        ── CREATE
+├── Existing cells ka data dekho           ── RETRIEVE
+├── Existing cells ka data badlo           ── UPDATE
+└── Existing cells ko hata do              ── DELETE
 ```
 
 #### Instagram se samjho:
 
 ```
 Instagram par kya-kya karte ho?
-├── Naya post upload karo, comment likho   ──▶ CREATE
-├── Feed scroll karo, profile dekho        ──▶ RETRIEVE
-├── Apna profile edit karo, comment edit   ──▶ UPDATE
-└── Post delete karo, comment delete karo  ──▶ DELETE
+├── Naya post upload karo, comment likho   ── CREATE
+├── Feed scroll karo, profile dekho        ── RETRIEVE
+├── Apna profile edit karo, comment edit   ── UPDATE
+└── Post delete karo, comment delete karo  ── DELETE
 ```
 
 #### Zomato se samjho:
 
 ```
 Zomato par kya-kya karte ho?
-├── Naya order place karo                  ──▶ CREATE
-├── Past orders dekho                      ──▶ RETRIEVE
-├── Delivery address update karo           ──▶ UPDATE
-└── Koi address delete karo               ──▶ DELETE
+├── Naya order place karo                  ── CREATE
+├── Past orders dekho                      ── RETRIEVE
+├── Delivery address update karo           ── UPDATE
+└── Koi address delete karo               ── DELETE
 ```
 
-> **Key Insight:** Duniya ki koi bhi dynamic website/software lo — saare interactions CRUD ke andar fit ho jaate hain. Koi 5th type nahi hoti.
+> **Key Insight:** Duniya ki koi bhi dynamic website/software lo - saare interactions CRUD ke andar fit ho jaate hain. Koi 5th type nahi hoti.
 
 ---
 
@@ -1456,19 +1456,19 @@ Normal Software:
 
 Website:
   [Server Machine]       [Client Machine]
-     (installed) ◀─HTTP─▶ (accessed by you)
+     (installed) ─HTTP─ (accessed by you)
 ```
 
 **Server** = Woh machine jahan website installed hai.  
 **Client** = Aapki machine jahan se aap website access karte ho.
 
-Isliye websites mein bhi CRUD operations same hoti hain — bas yeh internet ke through, **HTTP protocol** ke zariye hoti hain.
+Isliye websites mein bhi CRUD operations same hoti hain - bas yeh internet ke through, **HTTP protocol** ke zariye hoti hain.
 
 ---
 
-### 5. HTTP Methods — CRUD ko HTTP mein Represent Karna
+### 5. HTTP Methods - CRUD ko HTTP mein Represent Karna
 
-Jab CRUD operations **internet (HTTP) ke through** hoti hain, toh server ko pata hona chahiye ki client **kis type ka interaction** karna chahta hai. Isliye **HTTP Request mein ek "verb" (word) add kiya jaata hai** — ise **HTTP Method** kehte hain.
+Jab CRUD operations **internet (HTTP) ke through** hoti hain, toh server ko pata hona chahiye ki client **kis type ka interaction** karna chahta hai. Isliye **HTTP Request mein ek "verb" (word) add kiya jaata hai** - ise **HTTP Method** kehte hain.
 
 | CRUD Operation | HTTP Method (Verb) | Matlab |
 |---------------|-------------------|--------|
@@ -1481,12 +1481,12 @@ Jab CRUD operations **internet (HTTP) ke through** hoti hain, toh server ko pata
 
 ---
 
-### 6. Flowchart — End-to-End HTTP CRUD Flow
+### 6. Flowchart - End-to-End HTTP CRUD Flow
 
 ```
 User (Client) kuch karna chahta hai
            │
-           ▼
+           
    Kaunsa operation?
   ┌────────┬────────┬────────┐
   │        │        │        │
@@ -1496,31 +1496,31 @@ Retrieve  Create  Update  Delete
   │        │        │        │
   └────────┴────────┴────────┘
            │
-           ▼
+           
   HTTP Request banta hai
   [Method: GET/POST/PUT/DELETE]
   [URL: endpoint address]
   [Body: data (sirf POST/PUT mein)]
            │
-           ▼
+           
      Server pe pahuncha
            │
-           ▼
+           
   Server operation perform karta hai
   (DB se read / DB mein write / etc.)
            │
-           ▼
+           
   HTTP Response wapas client ko
   [Status Code: 200 OK / 201 Created / 404 Not Found]
   [Body: JSON data]
            │
-           ▼
+           
   User ko result dikhta hai
 ```
 
 ---
 
-### 7. Restaurant Analogy — HTTP Methods ko Samjho
+### 7. Restaurant Analogy - HTTP Methods ko Samjho
 
 Ek restaurant ka scene imagine karo:
 
@@ -1542,7 +1542,7 @@ Ek restaurant ka scene imagine karo:
 
 ---
 
-### 8. Hamara Project — HTTP Methods Ka Use
+### 8. Hamara Project - HTTP Methods Ka Use
 
 Patient Management API mein hum exact same pattern follow karenge:
 
@@ -1565,7 +1565,7 @@ Patient Management API mein hum exact same pattern follow karenge:
 | **POST** | Create operation. Naya data server ko bhejna. Request body mein data hota hai. |
 | **PUT** | Update operation. Existing resource ko modify karna. Body mein updated data hota hai. |
 | **DELETE** | Delete operation. Server se koi resource hatana. |
-| **CRUD** | Create, Retrieve, Update, Delete — kisi bhi dynamic software ke 4 fundamental operations |
+| **CRUD** | Create, Retrieve, Update, Delete - kisi bhi dynamic software ke 4 fundamental operations |
 | **Static Software** | Kam interaction wala software (e.g., Calendar, Clock) |
 | **Dynamic Software** | Zyada interaction wala software (e.g., MS Excel, Instagram) |
 | **Client** | Woh machine/app jahan se request aati hai (aapka browser) |
@@ -1581,15 +1581,15 @@ HTTP Methods ML systems mein bhi wahi kaam karte hain:
 
 ```
 ML API Example:
-├── POST /train        ──▶ Naya model train karo (Create)
-├── GET  /predict      ──▶ Prediction lo (Retrieve)
-├── PUT  /model/config ──▶ Model hyperparams update karo (Update)
-└── DELETE /model/{id} ──▶ Purana model delete karo (Delete)
+├── POST /train        ── Naya model train karo (Create)
+├── GET  /predict      ── Prediction lo (Retrieve)
+├── PUT  /model/config ── Model hyperparams update karo (Update)
+└── DELETE /model/{id} ── Purana model delete karo (Delete)
 ```
 
 - **RAG system mein:** `POST /ask` endpoint user ka query receive karta hai (body mein), document search karta hai, LLM se answer generate karta hai, aur JSON response bhejta hai.
-- **Model Deployment mein:** `GET /predict?input=...` ya `POST /predict` (body mein features) — dono common patterns hain.
-- **Pydantic + POST:** Jab form data aata hai POST request mein, Pydantic uski strict validation karta hai — galat type aaya toh auto-reject.
+- **Model Deployment mein:** `GET /predict?input=...` ya `POST /predict` (body mein features) - dono common patterns hain.
+- **Pydantic + POST:** Jab form data aata hai POST request mein, Pydantic uski strict validation karta hai - galat type aaya toh auto-reject.
 
 ---
 
@@ -1597,84 +1597,84 @@ ML API Example:
 
 - Software 2 types ke hote hain: **Static** (kam interaction) aur **Dynamic** (zyada interaction).
 - Kisi bhi dynamic software mein sirf **4 types ke interactions** hote hain: **CRUD** (Create, Retrieve, Update, Delete).
-- Websites bhi software hain — fark bas yeh hai ki woh **internet (HTTP) ke through** access hoti hain.
+- Websites bhi software hain - fark bas yeh hai ki woh **internet (HTTP) ke through** access hoti hain.
 - CRUD operations ko HTTP pe express karne ke liye **HTTP Methods (Verbs)** use hoti hain:
-  - `POST` → Create
-  - `GET` → Retrieve
-  - `PUT` → Update
-  - `DELETE` → Delete
+  - `POST`  Create
+  - `GET`  Retrieve
+  - `PUT`  Update
+  - `DELETE`  Delete
 - FastAPI mein har endpoint par aap in methods mein se ek assign karte ho (`@app.get()`, `@app.post()`, etc.)
 - Hamara Patient Management API bhi inheen 4 methods use karega apne 5 endpoints mein.
 
 ---
 
-## Topic 9: HTTP Methods — Real World Browser Demo
+## Topic 9: HTTP Methods - Real World Browser Demo
 
 ### 1. Introduction
 
-Theory ke baad ab dekhte hain ki **real websites par HTTP methods actually kaise kaam karti hain**. Browser ka built-in **DevTools (Inspect → Network tab)** use karke hum behind-the-scenes HTTP requests dekh sakte hain.
+Theory ke baad ab dekhte hain ki **real websites par HTTP methods actually kaise kaam karti hain**. Browser ka built-in **DevTools (Inspect  Network tab)** use karke hum behind-the-scenes HTTP requests dekh sakte hain.
 
-> **Setup:** Browser mein kisi bhi page par `Right Click → Inspect → Network tab` open karo. Ab jo bhi HTTP requests server ko jayengi, woh yahan list hoti jaayengi.
+> **Setup:** Browser mein kisi bhi page par `Right Click  Inspect  Network tab` open karo. Ab jo bhi HTTP requests server ko jayengi, woh yahan list hoti jaayengi.
 
 ---
 
-### 2. Demo 1 — GET Request (Retrieve/View)
+### 2. Demo 1 - GET Request (Retrieve/View)
 
 **Scenario:** CampusX website par "Courses" page access karna.
 
-Yeh clearly ek **Retrieve** type ka interaction hai — hum kuch **view** karna chahte hain, kuch **bhej** nahi rahe.
+Yeh clearly ek **Retrieve** type ka interaction hai - hum kuch **view** karna chahte hain, kuch **bhej** nahi rahe.
 
 **Observation in Network Tab:**
 ```
 Request URL    : https://campusx.in/store
-Request Method : GET        ✅
+Request Method : GET        
 ```
 
 **Explanation:**
 - Browser ne mere liye ek `GET` HTTP request server ko bheja.
 - Server ne courses ka data wapas bheja.
-- `GET` → Retrieve → "Mujhe kuch data chahiye, server please do."
-- `GET` request mein **koi body nahi hoti** — sirf URL se hi server ko pata chalta hai kya chahiye.
+- `GET`  Retrieve  "Mujhe kuch data chahiye, server please do."
+- `GET` request mein **koi body nahi hoti** - sirf URL se hi server ko pata chalta hai kya chahiye.
 
 ---
 
-### 3. Demo 2 — POST Request (Create/Send Data)
+### 3. Demo 2 - POST Request (Create/Send Data)
 
 **Scenario:** CampusX website par Login form fill karke submit karna (email + password).
 
-Yeh **Create/Send** type ka interaction hai — hum kuch **data server ko bhej** rahe hain.
+Yeh **Create/Send** type ka interaction hai - hum kuch **data server ko bhej** rahe hain.
 
 **Observation in Network Tab:**
 ```
 Request URL    : https://campusx.in/authenticate
-Request Method : POST       ✅
+Request Method : POST       
 ```
 
 **Explanation:**
 - Form submit karte hi browser ne ek `POST` HTTP request server ko bheja.
 - `POST` request ke **body** mein email aur password tha.
 - Server ne credentials check kiye aur response diya.
-- `POST` → Create/Send → "Main server ko kuch data de raha hoon."
+- `POST`  Create/Send  "Main server ko kuch data de raha hoon."
 
 ---
 
-### 4. GET vs POST — Key Difference
+### 4. GET vs POST - Key Difference
 
 ```
 GET Request:
 ┌──────────────────────────────┐
-│  GET /courses HTTP/1.1       │  ← Method + URL
-│  Host: campusx.in            │  ← Headers
-│  (No body)                   │  ← ❌ Body nahi hoti
+│  GET /courses HTTP/1.1       │   Method + URL
+│  Host: campusx.in            │   Headers
+│  (No body)                   │    Body nahi hoti
 └──────────────────────────────┘
 Server: "Theek hai, courses ka data lo."
 
 POST Request:
 ┌──────────────────────────────┐
-│  POST /authenticate HTTP/1.1 │  ← Method + URL
-│  Host: campusx.in            │  ← Headers
+│  POST /authenticate HTTP/1.1 │   Method + URL
+│  Host: campusx.in            │   Headers
 │                              │
-│  {                           │  ← ✅ Body hoti hai
+│  {                           │    Body hoti hai
 │    "email": "x@gmail.com",  │
 │    "password": "****"        │
 │  }                           │
@@ -1691,9 +1691,9 @@ Server: "Credentials check karta hoon..."
 
 ---
 
-### 5. Practical Takeaway — Aage Project Mein
+### 5. Practical Takeaway - Aage Project Mein
 
-Hamara pehla endpoint banenge **GET `/patients`** — jo saare patients ka data retrieve karega.
+Hamara pehla endpoint banenge **GET `/patients`** - jo saare patients ka data retrieve karega.
 
 ```python
 # FastAPI mein GET endpoint kuch aisa dikhega:
@@ -1713,15 +1713,15 @@ def get_all_patients():
 ### 6. Summary
 
 - Browser ka **Network tab** (DevTools) se aap real websites par actual HTTP methods dekh sakte ho.
-- **Page/data view karna** → `GET` request (e.g., courses page dekhna)
-- **Form submit / data bhejna** → `POST` request (e.g., login form)
-- `GET` requests mein **body nahi hoti** — data URL se specify hota hai.
-- `POST` requests mein **body hoti hai** — data securely body mein travel karta hai.
-- Hamara pehla project endpoint: **`GET /patients`** — saare patients ka data retrieve karna.
+- **Page/data view karna**  `GET` request (e.g., courses page dekhna)
+- **Form submit / data bhejna**  `POST` request (e.g., login form)
+- `GET` requests mein **body nahi hoti** - data URL se specify hota hai.
+- `POST` requests mein **body hoti hai** - data securely body mein travel karta hai.
+- Hamara pehla project endpoint: **`GET /patients`** - saare patients ka data retrieve karna.
 
 ---
 
-## Topic 10: Path Parameters aur Query Parameters — Dynamic URL Segments
+## Topic 10: Path Parameters aur Query Parameters - Dynamic URL Segments
 
 ### 1. Introduction
 
@@ -1729,13 +1729,13 @@ Is video mein do bahut important concepts cover ho rahe hain: **Path Parameters*
 
 ---
 
-### 2. Path Parameters — Kya Hain?
+### 2. Path Parameters - Kya Hain?
 
 **Definition:**
 
 > *"Path Parameters are dynamic segments of a URL path used to identify a specific resource."*
 
-Seedha bhasha mein — Path Parameters URL ke woh hisse hain jo **change ho sakte hain**, aur unka kaam hai ki woh server par pade hue bahut saare resources mein se **ek specific resource ko locate** karein.
+Seedha bhasha mein - Path Parameters URL ke woh hisse hain jo **change ho sakte hain**, aur unka kaam hai ki woh server par pade hue bahut saare resources mein se **ek specific resource ko locate** karein.
 
 ---
 
@@ -1757,7 +1757,7 @@ Is endpoint par hit karte hi **saare patients ka data** ek saath load hoke dikht
 GET http://localhost:8000/view/3
 ```
 
-Yahan pe yeh `3` ek **dynamic part** hai — ise hi **Path Parameter** kehte hain.
+Yahan pe yeh `3` ek **dynamic part** hai - ise hi **Path Parameter** kehte hain.
 
 ```
 http://localhost:8000/view/3
@@ -1766,15 +1766,15 @@ http://localhost:8000/view/3
 │  (domain + route)      │
 ```
 
-- `localhost:8000` → Domain (fixed, change nahi hota)
-- `/view` → Route (fixed, change nahi hota)
-- `/3` → **Path Parameter** (dynamic — yeh `3` ki jagah `4`, `5` ya kuch bhi ho sakta hai)
+- `localhost:8000`  Domain (fixed, change nahi hota)
+- `/view`  Route (fixed, change nahi hota)
+- `/3`  **Path Parameter** (dynamic - yeh `3` ki jagah `4`, `5` ya kuch bhi ho sakta hai)
 
 ---
 
 ### 4. Path Parameters Ka Kaam
 
-Path parameter ka sirf ek hi kaam hai — **ek specific resource ko identify karna** server par pade hue bahut saare resources mein se.
+Path parameter ka sirf ek hi kaam hai - **ek specific resource ko identify karna** server par pade hue bahut saare resources mein se.
 
 Jaise hamare database (JSON file) mein 5 patients hain. Path parameter ki madad se hum un 5 mein se **kisi ek particular patient** ko select kar paa rahe hain.
 
@@ -1794,26 +1794,26 @@ Path parameters teen main operations mein extensively use hote hain:
 
 #### Real-World Examples:
 
-- **Social Media Profile:** `/users/nitesh` → Ek particular user ka profile dikhana
-- **E-commerce Product:** `/products/42` → Ek particular product ki detail dikhana
-- **Blog Post:** `/posts/108` → Ek particular blog post dikhana
+- **Social Media Profile:** `/users/nitesh`  Ek particular user ka profile dikhana
+- **E-commerce Product:** `/products/42`  Ek particular product ki detail dikhana
+- **Blog Post:** `/posts/108`  Ek particular blog post dikhana
 
 ---
 
-### 6. Hamara Project — Naya Endpoint
+### 6. Hamara Project - Naya Endpoint
 
 Ab hamare Patient Management API mein ek **naya endpoint** add karenge:
 
-**Goal:** Client (user) apne pasand ke **kisi bhi specific patient** ka data dekh sake — saare patients ka data nahi, sirf ek particular patient ka.
+**Goal:** Client (user) apne pasand ke **kisi bhi specific patient** ka data dekh sake - saare patients ka data nahi, sirf ek particular patient ka.
 
-**Kaunsa patient?** Yeh humein URL ke through bataya jaayega — **path parameter** ki madad se.
+**Kaunsa patient?** Yeh humein URL ke through bataya jaayega - **path parameter** ki madad se.
 
 ```
-# Existing endpoint — saare patients dikhata hai
-GET /view        →  All patients ka data
+# Existing endpoint - saare patients dikhata hai
+GET /view          All patients ka data
 
-# Naya endpoint — sirf ek patient dikhayega
-GET /view/{patient_id}   →  Specific patient ka data (e.g., /view/P003)
+# Naya endpoint - sirf ek patient dikhayega
+GET /view/{patient_id}     Specific patient ka data (e.g., /view/P003)
 ```
 
 ---
@@ -1830,7 +1830,7 @@ GET /view/{patient_id}   →  Specific patient ka data (e.g., /view/P003)
 
 ---
 
-### 8. Code Demo — Path Parameter Endpoint Banana
+### 8. Code Demo - Path Parameter Endpoint Banana
 
 Ab code mein implement karte hain. Hamare route ka naam rakhte hain `/patient` aur saath mein ek **dynamic segment** `{patient_id}` add karte hain:
 
@@ -1849,9 +1849,9 @@ def view_patient(patient_id: str):
 
 | Line | Explanation |
 |------|-------------|
-| `@app.get('/patient/{patient_id}')` | Route define kiya — `{patient_id}` ek **variable** hai. Abhi nahi pata client kaunsa patient maangega, isliye curly braces mein likha |
+| `@app.get('/patient/{patient_id}')` | Route define kiya - `{patient_id}` ek **variable** hai. Abhi nahi pata client kaunsa patient maangega, isliye curly braces mein likha |
 | `def view_patient(patient_id: str)` | Function jo is route ko handle karega. Route se mili `patient_id` yahan parameter mein aati hai. **Type hint `str`** isliye hai kyunki hamare `patients.json` mein IDs strings hain (`P001`, `P002`, etc.) |
-| `data = load_data()` | Last video mein banaya hua utility function — poora JSON data load karta hai as a Python dictionary |
+| `data = load_data()` | Last video mein banaya hua utility function - poora JSON data load karta hai as a Python dictionary |
 | `if patient_id in data:` | Check karta hai ki yeh patient ID hamare dictionary mein ek **key** ke roop mein exist karti hai ya nahi |
 | `return data[patient_id]` | Agar exist karti hai toh us patient ka saara data (name, city, age, etc.) return kar do |
 | `return {'error': 'patient not found'}` | Agar `if` condition false hai (patient ID nahi mili), toh error message return karo |
@@ -1861,25 +1861,25 @@ def view_patient(patient_id: str):
 ```
 Client URL mein likhta hai: /patient/P001
           │
-          ▼
+          
 Route match hota hai: /patient/{patient_id}
 patient_id variable mein "P001" aa jata hai
           │
-          ▼
+          
 Function view_patient(patient_id="P001") call hota hai
           │
-          ▼
-data = load_data()  →  poora patients.json load hua
+          
+data = load_data()    poora patients.json load hua
           │
-          ▼
+          
 Check: "P001" in data?
-  ├── YES → return data["P001"]  →  Ananya Sharma ka data
-  └── NO  → return {'error': 'patient not found'}
+  ├── YES  return data["P001"]    Ananya Sharma ka data
+  └── NO   return {'error': 'patient not found'}
 ```
 
 ---
 
-### 9. Testing — Browser aur Swagger UI
+### 9. Testing - Browser aur Swagger UI
 
 Server run karo:
 
@@ -1901,14 +1901,14 @@ uvicorn main:app --reload
 1. Browser mein `http://localhost:8000/docs` jaao
 2. Naya endpoint dikhega: **GET /patient/{patient_id}**
 3. Wahan clearly likha hoga ki `patient_id` ek **path parameter** hai aur **required** hai
-4. **"Try it out"** click karo → `patient_id` field mein `P001` likho → **"Execute"** click karo
+4. **"Try it out"** click karo  `patient_id` field mein `P001` likho  **"Execute"** click karo
 5. Neeche response mein us patient ka data dikh jaayega
 
 ---
 
-### 10. Code Improvement — `Path` Function Se Readability Enhance Karna
+### 10. Code Improvement - `Path` Function Se Readability Enhance Karna
 
-Abhi Swagger UI mein endpoint dikhta hai, lekin client ko sirf itna pata chalta hai ki `patient_id` ek required path parameter hai. **Koi description ya example nahi dikhta** — toh client ko samajhne mein dikkat ho sakti hai ki patient ID ka format kya hai.
+Abhi Swagger UI mein endpoint dikhta hai, lekin client ko sirf itna pata chalta hai ki `patient_id` ek required path parameter hai. **Koi description ya example nahi dikhta** - toh client ko samajhne mein dikkat ho sakti hai ki patient ID ka format kya hai.
 
 **Definition:**
 
@@ -1919,21 +1919,21 @@ Abhi Swagger UI mein endpoint dikhta hai, lekin client ko sirf itna pata chalta 
 | Feature | Explanation |
 |---------|-------------|
 | **Title** | Path parameter ka title add karna |
-| **Description** | Path parameter ka description add karna — client ko samajh aaye ki kya expect karna hai |
-| **Example** | Ek ya multiple examples dena — taaki client ko pata chale ki input kaisa dikhta hai |
+| **Description** | Path parameter ka description add karna - client ko samajh aaye ki kya expect karna hai |
+| **Example** | Ek ya multiple examples dena - taaki client ko pata chale ki input kaisa dikhta hai |
 | **Validation (`ge`, `gt`, `le`, `lt`)** | Agar path parameter integer ho toh greater than, less than jaise constraints lagana (e.g., patient ID 0 se neeche nahi, 100 se upar nahi) |
 | **`min_length` / `max_length`** | String path parameter ki minimum aur maximum length define karna |
 | **`pattern` (regex)** | Regex pattern se data validation apply karna |
 
-#### Practical Code — `Path` Function Use Karna
+#### Practical Code - `Path` Function Use Karna
 
-**Step 1 — Import karo:**
+**Step 1 - Import karo:**
 
 ```python
 from fastapi import FastAPI, Path
 ```
 
-**Step 2 — Function parameter mein `Path()` call karo:**
+**Step 2 - Function parameter mein `Path()` call karo:**
 
 ```python
 @app.get('/patient/{patient_id}')
@@ -1950,13 +1950,13 @@ def view_patient(patient_id: str = Path(..., description='ID of the patient in t
 | Argument | Value | Explanation |
 |----------|-------|-------------|
 | `...` (Ellipsis) | First argument | Yeh batata hai ki yeh path parameter **required** hai. Waise bhi saare path parameters required hote hain, lekin yeh ek achha practice hai explicitly likhna |
-| `description` | `'ID of the patient in the DB'` | Swagger UI mein is parameter ke saath yeh description dikhega — client ko samajh aayega ki kya bhejna hai |
-| `example` | `'P001'` | Swagger UI mein ek example value pre-fill hogi — client ko pata chal jaayega ki patient ID ka format kaisa hota hai |
+| `description` | `'ID of the patient in the DB'` | Swagger UI mein is parameter ke saath yeh description dikhega - client ko samajh aayega ki kya bhejna hai |
+| `example` | `'P001'` | Swagger UI mein ek example value pre-fill hogi - client ko pata chal jaayega ki patient ID ka format kaisa hota hai |
 
 #### Swagger UI Mein Fark
 
 **Pehle (bina `Path`):**
-- Sirf dikhta tha: `patient_id` — required, string
+- Sirf dikhta tha: `patient_id` - required, string
 - Koi description nahi, koi example nahi
 
 **Baad mein (`Path` ke saath):**
@@ -1969,13 +1969,13 @@ def view_patient(patient_id: str = Path(..., description='ID of the patient in t
 
 ---
 
-### 11. HTTP Status Codes — Response Ka Result Batane Wale Numbers
+### 11. HTTP Status Codes - Response Ka Result Batane Wale Numbers
 
 **Definition:**
 
 > *"HTTP Status Codes are three-digit numbers returned by a web server to indicate the result of a client's request."*
 
-Jab bhi server ek HTTP response prepare karta hai, toh us response mein hamesha ek **3-digit status code** add hota hai. Yeh code client ko batata hai ki uski request ke saath kya hua — successful rahi, ya kuch gadbad hui, aur agar gadbad hui toh kis tarah ki.
+Jab bhi server ek HTTP response prepare karta hai, toh us response mein hamesha ek **3-digit status code** add hota hai. Yeh code client ko batata hai ki uski request ke saath kya hua - successful rahi, ya kuch gadbad hui, aur agar gadbad hui toh kis tarah ki.
 
 #### Status Code Categories
 
@@ -1993,17 +1993,17 @@ Jab bhi server ek HTTP response prepare karta hai, toh us response mein hamesha 
 | **200** | OK | Request sahi se process hui, response sahi aaya |
 | **201** | Created | Naya resource successfully create ho gaya (POST requests mein common) |
 | **204** | No Content | Success hai, lekin koi data return nahi karna (DELETE requests mein common) |
-| **400** | Bad Request | Client ne galat request bheji — missing fields ya wrong data type |
+| **400** | Bad Request | Client ne galat request bheji - missing fields ya wrong data type |
 | **401** | Unauthorized | Login kiye bina protected resource access karne ki koshish |
 | **403** | Forbidden | Login ho chuka hai, lekin is resource ko dekhne ki permission nahi hai |
 | **404** | Not Found | Jo resource client dhoondh raha hai, woh exist hi nahi karta |
 | **500** | Internal Server Error | Server pe hi kuch gadbad ho gayi |
 | **502** | Bad Gateway | HTTP communication beech mein broken ho gayi |
-| **503** | Service Unavailable | Server down hai ya overloaded hai — baad mein try karo |
+| **503** | Service Unavailable | Server down hai ya overloaded hai - baad mein try karo |
 
 ---
 
-### 12. Code Improvement — `HTTPException` Se Proper Error Handling
+### 12. Code Improvement - `HTTPException` Se Proper Error Handling
 
 **Problem:** Hamare puraane code mein jab patient nahi milta tha, toh hum ek normal JSON return kar rahe the:
 
@@ -2011,7 +2011,7 @@ Jab bhi server ek HTTP response prepare karta hai, toh us response mein hamesha 
 return {'error': 'patient not found'}
 ```
 
-Yeh dikhne mein theek lagta hai, **lekin status code 200 (OK) aa raha tha** — jo galat hai. Kyunki resource mila nahi aur status code bol raha hai "sab sahi hai". Ideally **404 (Not Found)** aana chahiye.
+Yeh dikhne mein theek lagta hai, **lekin status code 200 (OK) aa raha tha** - jo galat hai. Kyunki resource mila nahi aur status code bol raha hai "sab sahi hai". Ideally **404 (Not Found)** aana chahiye.
 
 **Solution:** FastAPI ka built-in **`HTTPException`** use karo.
 
@@ -2035,12 +2035,12 @@ def view_patient(patient_id: str = Path(..., description='ID of the patient in t
     raise HTTPException(status_code=404, detail='Patient not found')
 ```
 
-**Puraana vs Naya — Comparison:**
+**Puraana vs Naya - Comparison:**
 
 | | Puraana Code | Naya Code |
 |--|-------------|----------|
 | **Kya karta hai** | Normal JSON return karta hai | HTTP exception raise karta hai |
-| **Status Code** | 200 (galat — success bol raha hai) | 404 (sahi — resource nahi mila) |
+| **Status Code** | 200 (galat - success bol raha hai) | 404 (sahi - resource nahi mila) |
 | **Response Body** | `{"error": "patient not found"}` | `{"detail": "Patient not found"}` |
 | **Best Practice?** | Nahi | Haan |
 
@@ -2048,7 +2048,7 @@ def view_patient(patient_id: str = Path(..., description='ID of the patient in t
 
 | Argument | Value | Explanation |
 |----------|-------|-------------|
-| `status_code` | `404` | HTTP status code jo client ko milega — yahan 404 = Not Found |
+| `status_code` | `404` | HTTP status code jo client ko milega - yahan 404 = Not Found |
 | `detail` | `'Patient not found'` | Custom error message jo response body mein dikhega |
 
 > **Going Forward Rule:** Is project mein jab bhi kuch bhi gadbad hogi, toh normal JSON return karne ke bajaye hum **`HTTPException` raise karenge** with proper status code. Yeh industry best practice hai.
@@ -2065,51 +2065,51 @@ def view_patient(patient_id: str = Path(..., description='ID of the patient in t
 | **Resource** | Server par stored koi bhi data item (e.g., ek patient record, ek user profile) |
 | **Type Hint (`: str`)** | Function parameter ke expected data type ko specify karna |
 | **`Path` function** | FastAPI ka built-in function jo path parameters ki readability aur validation enhance karta hai |
-| **HTTP Status Code** | 3-digit number jo server response mein aata hai — request ka result batata hai |
+| **HTTP Status Code** | 3-digit number jo server response mein aata hai - request ka result batata hai |
 | **`HTTPException`** | FastAPI ka built-in exception jo custom error responses (proper status code + message) return karta hai |
-| **`raise`** | Python keyword jo exception trigger karta hai — `return` ki jagah use hota hai error cases mein |
+| **`raise`** | Python keyword jo exception trigger karta hai - `return` ki jagah use hota hai error cases mein |
 
 ---
 
 ### 14. Summary
 
 - **Path Parameters** URL ke dynamic segments hote hain jo server par kisi **specific resource ko identify** karte hain.
-- URL mein domain aur route name fixed rehte hain — sirf path parameter wala hissa dynamic hota hai.
+- URL mein domain aur route name fixed rehte hain - sirf path parameter wala hissa dynamic hota hai.
 - Path Parameters teen main CRUD operations mein use hote hain: **Retrieve (GET), Update (PUT), Delete (DELETE)**.
-- Hamare project mein naya endpoint bana: `GET /patient/{patient_id}` — path parameter se specific patient ka data milta hai.
+- Hamare project mein naya endpoint bana: `GET /patient/{patient_id}` - path parameter se specific patient ka data milta hai.
 - **`Path` function** se Swagger docs mein description aur example add karke readability improve hoti hai.
-- **HTTP Status Codes** 3-digit numbers hain jo batate hain request ka result kya raha — 2xx (success), 4xx (client error), 5xx (server error).
-- Normal JSON return karne ke bajaye **`HTTPException`** raise karna best practice hai — proper status code (e.g., 404) aur custom error message ke saath.
+- **HTTP Status Codes** 3-digit numbers hain jo batate hain request ka result kya raha - 2xx (success), 4xx (client error), 5xx (server error).
+- Normal JSON return karne ke bajaye **`HTTPException`** raise karna best practice hai - proper status code (e.g., 404) aur custom error message ke saath.
 - Do improvements kiye: (1) **`Path` function** se readability enhance ki, (2) **`HTTPException`** se proper error handling add ki.
 
 ---
 
-## Topic 11: Query Parameters — Optional Data Bhejna URL Ke Through
+## Topic 11: Query Parameters - Optional Data Bhejna URL Ke Through
 
 ### 1. Introduction
 
-Path Parameters ke baad ab samajhte hain ek doosra bahut important concept — **Query Parameters**. Yeh bhi URL ke through data bhejne ka ek tarika hai, lekin inka nature **optional** hota hai.
+Path Parameters ke baad ab samajhte hain ek doosra bahut important concept - **Query Parameters**. Yeh bhi URL ke through data bhejne ka ek tarika hai, lekin inka nature **optional** hota hai.
 
 ---
 
-### 2. Problem — Sorting Ki Zaroorat
+### 2. Problem - Sorting Ki Zaroorat
 
 Hamare project mein ek existing endpoint hai `GET /view` jo **saare patients ka data** chronologically dikhata hai (jis order mein database mein enter hua).
 
 **Naya Requirement:** Client ko yeh flexibility dena hai ki agar woh chahe toh data ko **sorted manner** mein dekh sake:
 
-- **Sort By:** Kis column ke basis pe sorting karni hai — `height`, `weight`, ya `bmi`
+- **Sort By:** Kis column ke basis pe sorting karni hai - `height`, `weight`, ya `bmi`
 - **Order:** Ascending ya Descending
 
-Aur sabse important baat — yeh dono **optional** hone chahiye. Agar client ne yeh values nahi bheji, toh default tarike se data dikhao.
+Aur sabse important baat - yeh dono **optional** hone chahiye. Agar client ne yeh values nahi bheji, toh default tarike se data dikhao.
 
 ---
 
-### 3. Query Parameters — Kya Hain?
+### 3. Query Parameters - Kya Hain?
 
 **Definition:**
 
-> *"Query Parameters are optional key-value pairs appended to the end of the URL, used to pass additional data to the server in an HTTP request. They are typically employed for operations like filtering, sorting, searching, and pagination — without altering the endpoint path itself."*
+> *"Query Parameters are optional key-value pairs appended to the end of the URL, used to pass additional data to the server in an HTTP request. They are typically employed for operations like filtering, sorting, searching, and pagination - without altering the endpoint path itself."*
 
 #### URL Structure
 
@@ -2120,18 +2120,18 @@ http://localhost:8000/view?sort_by=weight&order=asc
 │                    │   │                          │
 │                    │   │       Query Parameter 2  │
 │                    │   │                          │
-│                    ? ← Question mark (query params start)
-│                        & ← Ampersand (separator between params)
+│                    ?  Question mark (query params start)
+│                        &  Ampersand (separator between params)
 ```
 
 #### Key Rules:
 
 | Rule | Explanation |
 |------|-------------|
-| **`?` (Question Mark)** | Query parameters yahan se shuru hote hain — endpoint URL ke baad |
+| **`?` (Question Mark)** | Query parameters yahan se shuru hote hain - endpoint URL ke baad |
 | **Key-Value Pair** | Har parameter ek `key=value` format mein hota hai (e.g., `sort_by=weight`) |
 | **`&` (Ampersand)** | Multiple query parameters ko separate karne ke liye use hota hai |
-| **Optional** | Query parameters by default **optional** hote hain — nahi bhejna ho toh mat bhejo |
+| **Optional** | Query parameters by default **optional** hote hain - nahi bhejna ho toh mat bhejo |
 
 #### Examples:
 
@@ -2155,13 +2155,13 @@ http://localhost:8000/patients?city=Delhi&sort_by=age
 | **Sorting** | `?sort_by=weight&order=asc` | Data ko kisi column ke basis pe sort karna |
 | **Filtering** | `?city=Delhi&gender=male` | Specific conditions ke basis pe data filter karna |
 | **Searching** | `?query=AI+Agents` | Search bar se query bhejna |
-| **Pagination** | `?page=2&limit=10` | Bahut zyada data mein pages banana — page 2 ke 10 records dikhao |
+| **Pagination** | `?page=2&limit=10` | Bahut zyada data mein pages banana - page 2 ke 10 records dikhao |
 
 > **Key Point:** Query parameters se aap **existing endpoint ke path ko change kiye bina** additional features add kar sakte ho.
 
 ---
 
-### 5. Path Parameters vs Query Parameters — Comparison
+### 5. Path Parameters vs Query Parameters - Comparison
 
 | | Path Parameter | Query Parameter |
 |--|---------------|----------------|
@@ -2173,7 +2173,7 @@ http://localhost:8000/patients?city=Delhi&sort_by=age
 
 ---
 
-### 6. Hamara Project — Sorting Endpoint Ka Plan
+### 6. Hamara Project - Sorting Endpoint Ka Plan
 
 Ek naya endpoint banayenge jo query parameters ki madad se patients ka data sorted order mein dikhayega:
 
@@ -2189,7 +2189,7 @@ Ek naya endpoint banayenge jo query parameters ki madad se patients ka data sort
 **Possible URL combinations:**
 
 ```
-# Koi sorting nahi — default order mein data
+# Koi sorting nahi - default order mein data
 GET /view
 
 # Weight ke basis pe ascending (default order)
@@ -2204,7 +2204,7 @@ GET /view?sort_by=height&order=asc
 
 ---
 
-### 7. `Query` Function — Query Parameters Ko Enhance Karna
+### 7. `Query` Function - Query Parameters Ko Enhance Karna
 
 Jaise Path Parameters ke liye `Path` function tha, waise hi Query Parameters ke liye **`Query`** function hai.
 
@@ -2220,18 +2220,18 @@ from fastapi import FastAPI, Path, HTTPException, Query
 
 | Feature | Explanation |
 |---------|-------------|
-| **Default Value** | Query parameter ki default value set karna (e.g., `Query('asc')` → default `asc`) |
-| **Required banana** | `Query(...)` — teen dots = required (client ko value deni padegi) |
+| **Default Value** | Query parameter ki default value set karna (e.g., `Query('asc')`  default `asc`) |
+| **Required banana** | `Query(...)` - teen dots = required (client ko value deni padegi) |
 | **Title / Description** | Swagger docs mein readable metadata add karna |
 | **Example(s)** | Ek ya multiple examples dena |
 | **`min_length` / `max_length`** | String length constraints |
 | **Regex pattern** | Custom validation pattern |
 
-> `Query` function bilkul `Path` function ki tarah kaam karta hai — bas yeh query parameters ke liye hai.
+> `Query` function bilkul `Path` function ki tarah kaam karta hai - bas yeh query parameters ke liye hai.
 
 ---
 
-### 8. Code Demo — Sorting Endpoint
+### 8. Code Demo - Sorting Endpoint
 
 ```python
 from fastapi import FastAPI, Path, HTTPException, Query
@@ -2259,46 +2259,46 @@ def sort_patients(
 
 | Line | Explanation |
 |------|-------------|
-| `sort_by: str = Query(...)` | Pehla query parameter — **required** hai (teen dots). Client ko batana padega kis column se sort karna hai |
-| `order: str = Query('asc', ...)` | Doosra query parameter — **optional** hai. Default value `'asc'` set hai. Agar client ne nahi bheja toh ascending order mein sort hoga |
-| `valid_fields = ['height', 'weight', 'bmi']` | Allowed columns ki list — sirf inhi teen ke basis pe sorting hogi |
+| `sort_by: str = Query(...)` | Pehla query parameter - **required** hai (teen dots). Client ko batana padega kis column se sort karna hai |
+| `order: str = Query('asc', ...)` | Doosra query parameter - **optional** hai. Default value `'asc'` set hai. Agar client ne nahi bheja toh ascending order mein sort hoga |
+| `valid_fields = ['height', 'weight', 'bmi']` | Allowed columns ki list - sirf inhi teen ke basis pe sorting hogi |
 | `if sort_by not in valid_fields` | Check karta hai ki client ne valid column diya ya nahi. Nahi diya toh **400 Bad Request** |
 | `if order not in ['asc', 'desc']` | Check karta hai ki order sahi hai ya nahi. Galat diya toh **400 Bad Request** |
 | `data = load_data()` | Poora patient data load karta hai |
 | `sort_order = True if order == 'desc' else False` | Python ka `sorted()` function `reverse=True` pe descending sort karta hai, `False` pe ascending |
 | `sorted(data.values(), key=lambda x: x.get(sort_by, 0), reverse=sort_order)` | Dictionary ki values nikal ke, specified column ke basis pe sort karta hai |
 
-**Required vs Optional — Difference:**
+**Required vs Optional - Difference:**
 
 | Parameter | `Query()` Value | Required? | Explanation |
 |-----------|----------------|-----------|-------------|
 | `sort_by` | `Query(...)` | Haan (required) | Teen dots = client ko value deni padegi |
-| `order` | `Query('asc')` | Nahi (optional) | Default value set hai — nahi bheji toh `'asc'` use hoga |
+| `order` | `Query('asc')` | Nahi (optional) | Default value set hai - nahi bheji toh `'asc'` use hoga |
 
 ---
 
-### 9. Testing — Browser aur Swagger UI
+### 9. Testing - Browser aur Swagger UI
 
 #### Browser se test karo:
 
 | URL | Result |
 |-----|--------|
-| `/sort?sort_by=height&order=desc` | Height ke basis pe descending — sabse zyada height pehle |
-| `/sort?sort_by=bmi&order=desc` | BMI ke basis pe descending — sabse zyada BMI pehle |
-| `/sort?sort_by=bmi` | BMI ke basis pe **ascending** (default order) — sabse kam BMI pehle |
-| `/sort?sort_by=xyz` | **400 Error** — "Invalid field select from ['height', 'weight', 'bmi']" |
-| `/sort?sort_by=bmi&order=xyz` | **400 Error** — "Invalid order select between asc and desc" |
+| `/sort?sort_by=height&order=desc` | Height ke basis pe descending - sabse zyada height pehle |
+| `/sort?sort_by=bmi&order=desc` | BMI ke basis pe descending - sabse zyada BMI pehle |
+| `/sort?sort_by=bmi` | BMI ke basis pe **ascending** (default order) - sabse kam BMI pehle |
+| `/sort?sort_by=xyz` | **400 Error** - "Invalid field select from ['height', 'weight', 'bmi']" |
+| `/sort?sort_by=bmi&order=xyz` | **400 Error** - "Invalid order select between asc and desc" |
 
 #### Swagger UI (`/docs`) se test karo:
 
 1. `http://localhost:8000/docs` mein jaao
-2. **GET /sort** endpoint dikhega — dono query parameters listed honge
+2. **GET /sort** endpoint dikhega - dono query parameters listed honge
 3. `sort_by` mein `height`/`weight`/`bmi` aur `order` mein `asc`/`desc` dalke test karo
-4. Galat values dalke bhi test karo — 400 errors aayenge proper messages ke saath
+4. Galat values dalke bhi test karo - 400 errors aayenge proper messages ke saath
 
 ---
 
-### 10. Video Summary — Path Parameters vs Query Parameters (Final Recap)
+### 10. Video Summary - Path Parameters vs Query Parameters (Final Recap)
 
 | | Path Parameters | Query Parameters |
 |--|----------------|-----------------|
@@ -2308,7 +2308,7 @@ def sort_patients(
 | **Use kab** | Retrieve, Update, Delete ek specific resource | Existing endpoint mein extra functionality |
 | **Syntax** | `/patient/{patient_id}` | `/sort?sort_by=bmi&order=desc` |
 | **Enhance** | `Path` function se | `Query` function se |
-| **Ek saath use?** | Haan — dono ek hi endpoint mein use ho sakte hain |
+| **Ek saath use?** | Haan - dono ek hi endpoint mein use ho sakte hain |
 
 ---
 
@@ -2319,12 +2319,12 @@ def sort_patients(
 | **Query Parameter** | URL ke end mein `?` ke baad optional key-value pairs jo additional data server ko bhejte hain |
 | **`?` (Question Mark)** | URL mein query parameters ke start ka indicator |
 | **`&` (Ampersand)** | Multiple query parameters ke beech separator |
-| **Key-Value Pair** | `key=value` format mein data — e.g., `sort_by=weight` |
+| **Key-Value Pair** | `key=value` format mein data - e.g., `sort_by=weight` |
 | **`Query` function** | FastAPI ka built-in function jo query parameters declare, validate, aur document karta hai |
 | **Required (`...`)** | Teen dots (Ellipsis) dalne se parameter required ban jaata hai |
 | **Optional (default value)** | Default value set karne se parameter optional ban jaata hai |
-| **`sorted()` function** | Python ka built-in function jo data ko sort karta hai — `reverse=True` pe descending |
-| **`lambda`** | Python mein chota anonymous function — yahan sorting key define karne ke liye use hua |
+| **`sorted()` function** | Python ka built-in function jo data ko sort karta hai - `reverse=True` pe descending |
+| **`lambda`** | Python mein chota anonymous function - yahan sorting key define karne ke liye use hua |
 | **400 Bad Request** | HTTP status code jo client ki galat request indicate karta hai |
 
 ---
@@ -2334,18 +2334,18 @@ def sort_patients(
 - **Query Parameters** URL ke end mein `?` ke baad optional key-value pairs hote hain.
 - Yeh **filtering, sorting, searching, aur pagination** jaise operations ke liye use hote hain.
 - Path parameter **specific resource identify** karta hai (required), jabki query parameter **additional options pass** karta hai (optional).
-- **`Query` function** se query parameters ko describe, validate, aur document kiya jaata hai — bilkul `Path` function ki tarah.
+- **`Query` function** se query parameters ko describe, validate, aur document kiya jaata hai - bilkul `Path` function ki tarah.
 - `Query(...)` = **required**, `Query('default_value')` = **optional** with default.
-- Hamare project mein sorting endpoint bana: `GET /sort?sort_by=bmi&order=desc` — dono query parameters ke saath proper validation aur error handling (400 Bad Request).
+- Hamare project mein sorting endpoint bana: `GET /sort?sort_by=bmi&order=desc` - dono query parameters ke saath proper validation aur error handling (400 Bad Request).
 - Dono parameters (Path + Query) ek hi endpoint mein bhi use ho sakte hain.
 
 ---
 
-## Topic 8: Pydantic — Data Validation Library for Python
+## Topic 8: Pydantic - Data Validation Library for Python
 
 ### 1. Introduction
 
-Pydantic ek bahut important Python library hai jiski help se aap **data validation** perform kar sakte ho. Python mein static typing ka concept nahi hai — Python ek **dynamically typed language** hai. Matlab aap ek variable mein integer value bhi store kar sakte ho aur usi variable mein string value bhi store kar sakte ho. Beginners ke liye yeh feature accha hota hai, but jab aap **production-grade code** likhne jaoge toh bahut jaldi realize hoga ki **type validation aur data validation** software programming ka ek bahut important aspect hai.
+Pydantic ek bahut important Python library hai jiski help se aap **data validation** perform kar sakte ho. Python mein static typing ka concept nahi hai - Python ek **dynamically typed language** hai. Matlab aap ek variable mein integer value bhi store kar sakte ho aur usi variable mein string value bhi store kar sakte ho. Beginners ke liye yeh feature accha hota hai, but jab aap **production-grade code** likhne jaoge toh bahut jaldi realize hoga ki **type validation aur data validation** software programming ka ek bahut important aspect hai.
 
 Pydantic ki help se aap:
 - **Type Validation** perform kar sakte ho (ensure correct data types)
@@ -2359,11 +2359,11 @@ Pydantic ki help se aap:
 - **Data Science** mein ML pipelines build karte waqt
 - Basically koi bhi **production-grade Python code** jahan data correctness zaroori ho
 
-> **Important:** Hamesha Pydantic **V2** use karo. V2 Rust mein likha hai — bahut fast hai. V1 aur V2 mein kaafi differences hain. Install: `pip install pydantic`
+> **Important:** Hamesha Pydantic **V2** use karo. V2 Rust mein likha hai - bahut fast hai. V1 aur V2 mein kaafi differences hain. Install: `pip install pydantic`
 
 ---
 
-### 2. Why Pydantic? — Problem Statement
+### 2. Why Pydantic? - Problem Statement
 
 Pydantic do badi problems solve karta hai. Dono problems ko practically samajhte hain.
 
@@ -2378,15 +2378,15 @@ def insert_patient_data(name, age):
     print("Inserted into database")
 ```
 
-Ab ek junior programmer is function ko use karta hai. Usko function signature mein dikhta hai ki `name` aur `age` chahiye — but koi type information nahi hai. Toh wo kuch bhi bhej sakta hai:
+Ab ek junior programmer is function ko use karta hai. Usko function signature mein dikhta hai ki `name` aur `age` chahiye - but koi type information nahi hai. Toh wo kuch bhi bhej sakta hai:
 
 ```python
 insert_patient_data("Nitish", "30")  # age string mein bhej diya!
 ```
 
-**Problem:** Yeh code kaam kar jayega! Python koi error nahi dega. Database mein galat type ki value insert ho jayegi. Yeh ek bahut bada failure hai — type validation nahi ho rahi.
+**Problem:** Yeh code kaam kar jayega! Python koi error nahi dega. Database mein galat type ki value insert ho jayegi. Yeh ek bahut bada failure hai - type validation nahi ho rahi.
 
-**Attempt 1 — Type Hinting:**
+**Attempt 1 - Type Hinting:**
 
 ```python
 def insert_patient_data(name: str, age: int):
@@ -2395,9 +2395,9 @@ def insert_patient_data(name: str, age: int):
     print("Inserted into database")
 ```
 
-Ab function signature mein dikhta hai ki `name` string hona chahiye aur `age` integer. But agar junior programmer phir bhi galat type bhejta hai (`age = "30"` as string), toh **code phir bhi kaam kar jayega!** Kyunki Python ki type hinting **errors produce nahi karti** — yeh sirf informational hai, enforce nahi karti.
+Ab function signature mein dikhta hai ki `name` string hona chahiye aur `age` integer. But agar junior programmer phir bhi galat type bhejta hai (`age = "30"` as string), toh **code phir bhi kaam kar jayega!** Kyunki Python ki type hinting **errors produce nahi karti** - yeh sirf informational hai, enforce nahi karti.
 
-**Attempt 2 — Manual Type Checking (if-else):**
+**Attempt 2 - Manual Type Checking (if-else):**
 
 ```python
 def insert_patient_data(name: str, age: int):
@@ -2435,22 +2435,22 @@ def insert_patient_data(name: str, age: int):
 ```
 
 **Ab imagine karo:**
-- Agar `email` field bhi aaye → email format validate karna padega
-- Agar `phone` field aaye → phone number format validate karna padega
-- 10 variables aayein → 10 ke liye alag-alag data validation likhna padega
+- Agar `email` field bhi aaye  email format validate karna padega
+- Agar `phone` field aaye  phone number format validate karna padega
+- 10 variables aayein  10 ke liye alag-alag data validation likhna padega
 - **Plus** yahi sab `update_patient_data()` mein bhi copy-paste karna padega
 
-> **Bottom line:** Production-grade function likhne ke liye bahut saara **boilerplate code** likhna padta hai manually — type checking, data validation, error handling. Yeh **scalable nahi hai** aur **maintainable nahi hai**.
+> **Bottom line:** Production-grade function likhne ke liye bahut saara **boilerplate code** likhna padta hai manually - type checking, data validation, error handling. Yeh **scalable nahi hai** aur **maintainable nahi hai**.
 
 ---
 
-### 3. How Pydantic Works — 3 Steps
+### 3. How Pydantic Works - 3 Steps
 
 Pydantic essentially **3 steps** mein kaam karta hai. Yeh samajh lo toh pura Pydantic samajh aa jayega:
 
 #### Step 1: Pydantic Model banana (Schema define karna)
 
-Ek **class** banate ho jo `BaseModel` inherit karti hai. Is class ke andar aap apne data ka **ideal schema** define karte ho — kaunse fields chahiye aur unka data type kya hoga.
+Ek **class** banate ho jo `BaseModel` inherit karti hai. Is class ke andar aap apne data ka **ideal schema** define karte ho - kaunse fields chahiye aur unka data type kya hoga.
 
 ```python
 from pydantic import BaseModel
@@ -2467,30 +2467,30 @@ class Patient(BaseModel):
 #### Step 2: Raw data se object banana (Validation auto hoti hai)
 
 Ab ek dictionary (raw data) banao aur usse is class ka **object** banao. **Jab object banta hai, TAB validation automatically hoti hai:**
-- Sab required fields present hain? ✅
-- Har field ka type sahi hai? ✅
-- Constraints follow ho rahe hain? ✅
+- Sab required fields present hain? 
+- Har field ka type sahi hai? 
+- Constraints follow ho rahe hain? 
 
-Agar kuch bhi galat hoga → **ValidationError** aayega, object banega hi nahi.
+Agar kuch bhi galat hoga  **ValidationError** aayega, object banega hi nahi.
 
 ```python
-# Raw data — dictionary
+# Raw data - dictionary
 patient_info = {'name': 'Nitish', 'age': 25}
 
-# Object banao — ** se dictionary unpack hoti hai
+# Object banao - ** se dictionary unpack hoti hai
 patient1 = Patient(**patient_info)
 
 # Ye same hai:
 # patient1 = Patient(name='Nitish', age=25)
 ```
 
-> **`**` kya karta hai?** Dictionary ke key-value pairs ko function arguments mein convert karta hai. `{'name': 'Nitish', 'age': 25}` → `name='Nitish', age=25`
+> **`**` kya karta hai?** Dictionary ke key-value pairs ko function arguments mein convert karta hai. `{'name': 'Nitish', 'age': 25}`  `name='Nitish', age=25`
 
 ---
 
 #### Step 3: Validated object ko function mein use karna
 
-Ab function ko individual `name`, `age` nahi milta — ek **pura validated object** milta hai. Object ke andar `.name`, `.age` se values access karte hain.
+Ab function ko individual `name`, `age` nahi milta - ek **pura validated object** milta hai. Object ke andar `.name`, `.age` se values access karte hain.
 
 ```python
 def insert_patient(patient: Patient):       # Patient type ka object chahiye
@@ -2501,7 +2501,7 @@ def insert_patient(patient: Patient):       # Patient type ka object chahiye
 insert_patient(patient1)                    # Step 2 ka object bhejo
 ```
 
-**Fayda:** Ab chahe `insert_patient()` ho ya `update_patient()` ho — dono ko same `Patient` object chahiye. Validation ek jagah hoti hai (model mein), har function mein repeat nahi karni padti.
+**Fayda:** Ab chahe `insert_patient()` ho ya `update_patient()` ho - dono ko same `Patient` object chahiye. Validation ek jagah hoti hai (model mein), har function mein repeat nahi karni padti.
 
 ```python
 def update_patient(patient: Patient):       # same model, no duplicate validation!
@@ -2511,7 +2511,7 @@ def update_patient(patient: Patient):       # same model, no duplicate validatio
 
 ---
 
-### 4. Complex Fields — List, Dict, Optional
+### 4. Complex Fields - List, Dict, Optional
 
 #### Basic Types
 
@@ -2523,9 +2523,9 @@ class Patient(BaseModel):
     married: bool       # True / False
 ```
 
-#### Complex Types — List aur Dict
+#### Complex Types - List aur Dict
 
-Agar aap sirf `list` likhoge toh Pydantic sirf check karega ki "yeh list hai". But **list ke andar kya hona chahiye** — woh check nahi hoga. Isliye hum `list[str]` likhte hain — matlab "list honi chahiye, aur usme har item string hona chahiye."
+Agar aap sirf `list` likhoge toh Pydantic sirf check karega ki "yeh list hai". But **list ke andar kya hona chahiye** - woh check nahi hoga. Isliye hum `list[str]` likhte hain - matlab "list honi chahiye, aur usme har item string hona chahiye."
 
 ```python
 class Patient(BaseModel):
@@ -2533,7 +2533,7 @@ class Patient(BaseModel):
     contact_details: dict[str, str]    # dictionary jisme key=string, value=string
 ```
 
-> **Yaad rakho:** `list[str]` = 2-level validation → pehle check: list hai? phir check: har item string hai?
+> **Yaad rakho:** `list[str]` = 2-level validation  pehle check: list hai? phir check: har item string hai?
 > `dict[str, str]` = key bhi string, value bhi string.
 
 #### Optional Fields
@@ -2544,7 +2544,7 @@ By default **saari fields required** hoti hain. Agar koi field optional banana h
 class Patient(BaseModel):
     name: str                                   # required
     age: int                                    # required
-    allergies: list[str] | None = None          # optional — na bhejo toh None aa jayega
+    allergies: list[str] | None = None          # optional - na bhejo toh None aa jayega
     married: bool = False                       # optional with default value
 ```
 
@@ -2552,7 +2552,7 @@ class Patient(BaseModel):
 
 ---
 
-### 5. Data Validation — 3 Tarike
+### 5. Data Validation - 3 Tarike
 
 #### Tarika 1: Pydantic ke Custom Data Types (Built-in validators)
 
@@ -2565,8 +2565,8 @@ class Patient(BaseModel):
     email: EmailStr     # auto-validates email format (@ hona chahiye, domain hona chahiye)
 ```
 
-- Sahi: `"abc@gmail.com"` ✅
-- Galat: `"abcgmail.com"` ❌ (@ nahi hai → error)
+- Sahi: `"abc@gmail.com"` 
+- Galat: `"abcgmail.com"`  (@ nahi hai  error)
 
 **Simlarly:**
 
@@ -2577,14 +2577,14 @@ class Patient(BaseModel):
     linkedin_url: AnyUrl    # URL format validate karta hai (http:// ya https:// hona chahiye)
 ```
 
-- Sahi: `"https://linkedin.com/in/nitish"` ✅
-- Galat: `"linkedin.com/in/nitish"` ❌ (http:// nahi hai → error)
+- Sahi: `"https://linkedin.com/in/nitish"` 
+- Galat: `"linkedin.com/in/nitish"`  (http:// nahi hai  error)
 
-> **Yaad rakho:** Common validations (email, URL) ke liye Pydantic ke built-in types use karo — khud regex likhne ki zaroorat nahi!
+> **Yaad rakho:** Common validations (email, URL) ke liye Pydantic ke built-in types use karo - khud regex likhne ki zaroorat nahi!
 
 ---
 
-#### Tarika 2: `Field()` Function — Custom Business Rules
+#### Tarika 2: `Field()` Function - Custom Business Rules
 
 Jab aapke **business ke hisaab se** custom rules lagane hain (e.g., age 0 se 120 ke beech hi ho), tab `Field()` function use hota hai.
 
@@ -2613,7 +2613,7 @@ class Patient(BaseModel):
 
 ---
 
-#### Tarika 3: `Annotated` + `Field()` — Full Power Syntax (Recommended)
+#### Tarika 3: `Annotated` + `Field()` - Full Power Syntax (Recommended)
 
 Jab aapko ek field mein **data type + constraints + metadata** sab ek saath likhna ho, toh `Annotated` use karo. Yahi syntax sabse zyada professional code mein dikhega:
 
@@ -2647,20 +2647,20 @@ class Patient(BaseModel):
 > **`Annotated` ko aise samjho:** `Annotated[TYPE, FIELD(...)]` = pehle **type** batao, phir **rules aur metadata** batao. Bas!
 
 **Field() se 3 kaam hote hain:**
-1. **Data Validation** — `gt=0`, `max_length=50`, etc.
-2. **Metadata** — `title`, `description`, `examples` (FastAPI docs mein dikhte hain)
-3. **Default Values** — `default=None`, `default=False`
+1. **Data Validation** - `gt=0`, `max_length=50`, etc.
+2. **Metadata** - `title`, `description`, `examples` (FastAPI docs mein dikhte hain)
+3. **Default Values** - `default=None`, `default=False`
 
 ---
 
 ### 6. Smart Type Coercion (aur usse rokna)
 
-Pydantic by default **smart** hai — agar aap `"30"` string bhejo age mein, toh wo khud samajh ke `30` integer bana deta hai (kyunki `"30"` ko int mein convert karna possible hai).
+Pydantic by default **smart** hai - agar aap `"30"` string bhejo age mein, toh wo khud samajh ke `30` integer bana deta hai (kyunki `"30"` ko int mein convert karna possible hai).
 
 ```python
 patient_info = {'name': 'Nitish', 'age': '30'}  # age string mein hai
 patient1 = Patient(**patient_info)
-print(patient1.age)   # 30 (integer) — Pydantic ne convert kar diya!
+print(patient1.age)   # 30 (integer) - Pydantic ne convert kar diya!
 ```
 
 **Yeh feature helpful bhi hai aur dangerous bhi.** Agar aap chahte ho ki **bilkul sahi type hi aaye, convert mat karo**, toh `strict=True` lagao:
@@ -2669,7 +2669,7 @@ print(patient1.age)   # 30 (integer) — Pydantic ne convert kar diya!
 weight: Annotated[float, Field(gt=0, strict=True)]
 ```
 
-Ab `"65.0"` string bhejoge toh **error** aayega — sirf `65.0` float hi chalega.
+Ab `"65.0"` string bhejoge toh **error** aayega - sirf `65.0` float hi chalega.
 
 > **Yaad rakho:** `strict=True` = "exactly yahi type chahiye, convert mat karna." Use it jab aapko 100% sure hona hai ki sahi type aa rahi hai.
 
@@ -2679,19 +2679,19 @@ Ab `"65.0"` string bhejoge toh **error** aayega — sirf `65.0` float hi chalega
 
 | Term | Explanation |
 |------|-------------|
-| **Pydantic** | Python ki data validation library — type aur data validation enforce karti hai |
-| **BaseModel** | Pydantic ki base class — isko inherit karke apna model banate hain |
+| **Pydantic** | Python ki data validation library - type aur data validation enforce karti hai |
+| **BaseModel** | Pydantic ki base class - isko inherit karke apna model banate hain |
 | **Dynamic Typing** | Python ka feature jahan ek variable mein koi bhi type store ho sakti hai |
 | **Static Typing** | Java/C++ jaisi languages mein variable ka type fix hota hai |
-| **Type Hinting** | `name: str` likhna — sirf informational, enforce nahi karta |
-| **ValidationError** | Pydantic ka error — jab data type ya constraints fail kare |
+| **Type Hinting** | `name: str` likhna - sirf informational, enforce nahi karta |
+| **ValidationError** | Pydantic ka error - jab data type ya constraints fail kare |
 | **Field()** | Function jo constraints (gt, lt), metadata (title, description), aur defaults set karta hai |
-| **Annotated** | `typing` module se — `Annotated[type, Field(...)]` syntax mein type + rules ek saath likhte hain |
-| **Type Coercion** | Pydantic ka smart behavior — `"30"` string ko `30` int mein auto-convert karna |
-| **strict=True** | Type coercion band karna — exact type hi accept hoga |
-| **EmailStr** | Pydantic ka built-in type — email format validate karta hai |
-| **AnyUrl** | Pydantic ka built-in type — URL format validate karta hai |
-| **`**dict`** | Dictionary unpack — `{'a':1}` -> `a=1` mein convert hota hai |
+| **Annotated** | `typing` module se - `Annotated[type, Field(...)]` syntax mein type + rules ek saath likhte hain |
+| **Type Coercion** | Pydantic ka smart behavior - `"30"` string ko `30` int mein auto-convert karna |
+| **strict=True** | Type coercion band karna - exact type hi accept hoga |
+| **EmailStr** | Pydantic ka built-in type - email format validate karta hai |
+| **AnyUrl** | Pydantic ka built-in type - URL format validate karta hai |
+| **`**dict`** | Dictionary unpack - `{'a':1}` -> `a=1` mein convert hota hai |
 
 ---
 
@@ -2702,24 +2702,24 @@ Pydantic ka role FastAPI aur ML/AI systems mein critical hai:
 - **FastAPI Request Validation:** FastAPI internally Pydantic use karta hai. Jab aap Pydantic model define karte ho, FastAPI automatically galat requests reject kar deta hai. `Field()` ka metadata (title, description) FastAPI ke Swagger docs mein automatically dikhta hai.
 - **ML Pipeline Input Validation:** ML pipelines mein input data ka correct format hona zaroori hai. Pydantic se har stage par data quality enforce hoti hai.
 - **LLM Structured Output:** LLMs ka output unpredictable hota hai. Pydantic se strict schema enforce kar sakte ho (LangChain/LlamaIndex pattern).
-- **Config Management:** ML experiments mein hyperparameters aur settings ko Pydantic se validate karo — galat config se experiment fail hone se pehle error mil jaata hai.
+- **Config Management:** ML experiments mein hyperparameters aur settings ko Pydantic se validate karo - galat config se experiment fail hone se pehle error mil jaata hai.
 
 ---
 
 ### 9. Summary
 
 - Pydantic 3 steps mein kaam karta hai: (1) Model/class banao (schema define karo) -> (2) Raw data se object banao (validation auto hoti hai) -> (3) Validated object function mein use karo.
-- BaseModel inherit karna zaroori hai — tabhi class Pydantic model banegi.
-- Saari fields by default required hain — optional banana ho toh = None ya default value do.
+- BaseModel inherit karna zaroori hai - tabhi class Pydantic model banegi.
+- Saari fields by default required hain - optional banana ho toh = None ya default value do.
 - Complex types: list[str] = list jisme har item string ho. dict[str, str] = dict jisme key aur value dono string ho.
-- Data Validation ke 3 tarike: (1) Built-in types (EmailStr, AnyUrl), (2) Field() function (gt, lt, max_length), (3) Annotated[type, Field(...)] — recommended full-power syntax.
+- Data Validation ke 3 tarike: (1) Built-in types (EmailStr, AnyUrl), (2) Field() function (gt, lt, max_length), (3) Annotated[type, Field(...)] - recommended full-power syntax.
 - Field() ke 3 kaam: Data validation + Metadata + Default values.
 - Pydantic by default type coercion karta hai ("30" -> 30). Rokna ho toh strict=True.
-- Ek baar model define karo -> n functions mein reuse karo — no boilerplate!
+- Ek baar model define karo -> n functions mein reuse karo - no boilerplate!
 
 ---
 
-### 10. Syntax Cheatsheet — Quick Revision
+### 10. Syntax Cheatsheet - Quick Revision
 
 Jab bhool jaao toh yahan dekh lo:
 
@@ -2740,16 +2740,16 @@ class Patient(BaseModel):
 
 # ═══════════ OPTIONAL FIELDS ═══════════
 class Patient(BaseModel):
-    allergies: list[str] | None = None    # optional — None if not provided
+    allergies: list[str] | None = None    # optional - None if not provided
     married: bool = False                 # optional with default False
 
-# ═══════════ FIELD() — CONSTRAINTS ═══════════
+# ═══════════ FIELD() - CONSTRAINTS ═══════════
 class Patient(BaseModel):
     age: int = Field(gt=0, lt=120)        # 0 < age < 120
     weight: float = Field(gt=0)           # weight > 0
     name: str = Field(max_length=50)      # max 50 chars
 
-# ═══════════ ANNOTATED + FIELD() — FULL POWER ═══════════
+# ═══════════ ANNOTATED + FIELD() - FULL POWER ═══════════
 class Patient(BaseModel):
     name: Annotated[str, Field(
         max_length=50,
@@ -2795,7 +2795,7 @@ class Patient(BaseModel):
     def transform_name(cls, value):      # transformation bhi kar sakte ho
         return value.upper()             # naam hamesha CAPITAL mein
 
-# --- FIELD VALIDATOR — BEFORE/AFTER MODE ---
+# --- FIELD VALIDATOR - BEFORE/AFTER MODE ---
 class Patient(BaseModel):
     age: int
 
@@ -2805,7 +2805,7 @@ class Patient(BaseModel):
         if not (0 < value < 100):
             raise ValueError('Age 0-100 ke beech hona chahiye')
         return value
-    # mode='before' → type coercion ke PEHLE value milegi (raw input)
+    # mode='before'  type coercion ke PEHLE value milegi (raw input)
 
 # --- MODEL VALIDATOR ---
 from pydantic import model_validator
@@ -2838,7 +2838,7 @@ class Patient(BaseModel):
 
 ---
 
-### 11. Field Validator — Custom Business Logic
+### 11. Field Validator - Custom Business Logic
 
 #### Kab use karna hai?
 
@@ -2850,7 +2850,7 @@ Jab aapko kisi **ek field** ke upar **business-specific validation** ya **transf
 
 ---
 
-#### Syntax — Step by Step
+#### Syntax - Step by Step
 
 ```python
 from pydantic import BaseModel, field_validator
@@ -2859,11 +2859,11 @@ class Patient(BaseModel):
     name: str
     email: str
 
-    # ↓ Decorator — batao kaunsi field pe lagana hai
+    #  Decorator - batao kaunsi field pe lagana hai
     @field_validator('email')
-    # ↓ Hamesha @classmethod likhna zaroori hai
+    #  Hamesha @classmethod likhna zaroori hai
     @classmethod
-    # ↓ Method ka naam kuch bhi rakho. cls = class, value = us field ki value
+    #  Method ka naam kuch bhi rakho. cls = class, value = us field ki value
     def validate_email(cls, value):
         # Apna custom logic likho
         valid_domains = ['hdfc.com', 'icici.com']
@@ -2874,10 +2874,10 @@ class Patient(BaseModel):
 ```
 
 **4 cheezein yaad rakhni hain:**
-1. @field_validator('field_name') — decorator mein field ka naam batao
-2. @classmethod — hamesha likhna hai
-3. cls, value — method ko class aur field ki value milti hai
-4. return value — hamesha value return karo (chahe change karo ya na karo)
+1. @field_validator('field_name') - decorator mein field ka naam batao
+2. @classmethod - hamesha likhna hai
+3. cls, value - method ko class aur field ki value milti hai
+4. return value - hamesha value return karo (chahe change karo ya na karo)
 
 ---
 
@@ -2927,7 +2927,7 @@ Field validator ko do modes mein chala sakte ho:
 # Agar age = "30" (string) bheji aur model mein age: int hai:
 
 @field_validator('age', mode='before')       # value = "30" (string milegi)
-@field_validator('age', mode='after')        # value = 30  (int milegi — converted)
+@field_validator('age', mode='after')        # value = 30  (int milegi - converted)
 @field_validator('age')                      # same as mode='after' (default)
 ```
 
@@ -2947,7 +2947,7 @@ Agar age = "30" bheji toh value ek string hai ("30"), aur 0 < "30" compare nahi 
 
 ---
 
-### 12. Model Validator — Multi-field Validation
+### 12. Model Validator - Multi-field Validation
 
 #### Kab use karna hai?
 
@@ -2980,7 +2980,7 @@ class Patient(BaseModel):
 
 ---
 
-### 13. Computed Fields — Dynamic Data
+### 13. Computed Fields - Dynamic Data
 
 #### Kab use karna hai?
 
@@ -3008,5 +3008,112 @@ class Patient(BaseModel):
 - @computed_field aur @property dono hamesha saath use hote hain.
 - Method ka jo naam hoga (yahan 'bmi'), wahi field ka naam ban jayega.
 - isse hum object.bmi karke value access kar sakte hain.
+
+### 14. Nested Models - Hierarchy in Data
+
+#### Kab use karna hai?
+
+Jab aapka data complex ho aur uske andar bhi ek structure ho. Example: Patient ke data mein Address bhi hai. Address ke andar City, State, Pin Code hota hai. Agar address ko simple string rakhoge toh data access karna mushkil hoga. Iska solution hai **Nested Models** - yaani ek Pydantic model ke andar dusra model.
+
+#### Syntax
+
+```python
+from pydantic import BaseModel
+
+# 1. Pehle sub-component ka model banao
+class Address(BaseModel):
+    city: str
+    state: str
+    pincode: int
+
+# 2. Phir main model mein use karo
+class Patient(BaseModel):
+    name: str
+    age: int
+    address: Address        # Nested model
+```
+
+#### Benefits:
+- **Better Organization:** Data structure neat aur clean rehta hai.
+- **Auto Validation:** Address ke fields (City, State etc.) bhi automatically validate ho jate hain.
+- **Easy Access:** Dot notation se asani se data nikal sakte ho: `patient.address.city`.
+- **Reusability:** Address model ko aap Student ya Employee model mein bhi reuse kar sakte ho.
+
+---
+
+### 15. Exporting Models - Dictionary & JSON
+
+#### Kab use karna hai?
+
+Jab aapne Pydantic object bana liya, validation ho gayi, ab aapko woh data wapas ek simple Python Dictionary (`dict`) ya JSON string format mein chahiye (e.g., database mein save karne ke liye ya framework jaise FastAPI mein API response bhejne ke liye, ya debugging ke liye).
+
+#### 1. Dictionary mein Export (`model_dump`)
+
+```python
+# Pydantic object ko dict mein convert karna
+patient_dict = patient.model_dump()
+
+print(type(patient_dict))   # <class 'dict'>
+print(patient_dict)         # {'name': 'Nitish', 'address': {'city': 'Gurgaon', ...}}
+```
+
+**Key Point:** `model_dump()` nested objects ko bhi dictionary mein convert kar deta hai automatically.
+
+#### 2. JSON String mein Export (`model_dump_json`)
+
+Agar aapko seedha JSON text (string) chahiye, toh aap `model_dump_json()` use kar sakte ho.
+
+```python
+# Pydantic object ko json string mein convert karna
+patient_json = patient.model_dump_json()
+
+print(type(patient_json))   # <class 'str'>
+print(patient_json)         # {"name": "Nitish", "address": {"city": "Gurgaon", ...}}
+```
+
+---
+
+### 16. Export Filtering - Data Control Karna
+
+Jab aap data export karte ho, kabhi-kabhi aapko pura data nahi bhejta hota. Password, internal IDs, ya unnecessary fields ko hide karna padta hai. Pydantic iske liye bohat saare options deta hai.
+
+#### 1. Sirf specific fields bhejna (`include`)
+
+Agar aapko sirf naam chahiye baki sab ignore karna hai:
+
+```python
+# Sirf name field export hogi
+data = patient.model_dump(include={'name'}) 
+print(data)  # {'name': 'Nitish'}
+```
+
+#### 2. Specific fields ko hatana (`exclude`)
+
+Agar aapko naam aur age chhodke baaki sab chahiye:
+
+```python
+# name aur age export nahi hongi
+data = patient.model_dump(exclude={'name', 'age'}) 
+```
+
+**Nested fields exclude karna:**
+Agar 'address' ke andar 'state' field nahi bhejna hai, toh aap is tarah se dictionary bhej sakte ho:
+
+```python
+# Address ke andar state nahi aayega
+data = patient.model_dump(exclude={'address': {'state'}}) 
+```
+
+#### 3. Default values ko hide karna (`exclude_unset`)
+
+Maan lo aapne model mein `gender: str = 'Male'` default set kiya hai. Lekin patient create karte time aapne `gender` field provide nahi ki (woh default value utha liya).
+Agar aap chahte ho ki aise fields (jo user ne actually "set" nahi kiye they) export na hon, toh aap `exclude_unset=True` use kar sakte ho.
+
+```python
+# Sirf wahi data export hoga jo explicit provide kiya gaya tha
+data = patient.model_dump(exclude_unset=True) 
+```
+
+Yeh database queries optimization ya API response payload size chhota karne mein bohat kaam aata hai.
 
 ---

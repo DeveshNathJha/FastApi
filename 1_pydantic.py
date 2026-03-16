@@ -1,31 +1,39 @@
 # ============================================================
-# 1_pydantic.py — Pydantic Basics, Field Validator, Model Validator, Computed Fields
+# 1_pydantic.py - Pydantic Basics, Field Validator, Model Validator, Computed Fields
 # ============================================================
 # Pydantic V2 use ho raha hai (pip install pydantic)
 # Ye 3 steps mein kaam karta hai:
-#   Step 1: Model (class) define karo — schema batao
-#   Step 2: Raw data se object banao — validation auto hoti hai
+#   Step 1: Model (class) define karo - schema batao
+#   Step 2: Raw data se object banao - validation auto hoti hai
 #   Step 3: Validated object ko function mein use karo
 
 from pydantic import BaseModel, Field, field_validator, model_validator, computed_field
-# EmailStr bhi available hai (pip install pydantic[email]) — email validation ke liye
+# EmailStr bhi available hai (pip install pydantic[email]) - email validation ke liye
 from typing import Annotated
 
 # ============================================================
-# PYDANTIC MODEL — with Field Validators
+# PYDANTIC MODEL - with Field Validators
 # ============================================================
-# BaseModel inherit → class Pydantic model ban jaati hai
+# BaseModel inherit  class Pydantic model ban jaati hai
 # Fields mein type + constraints + metadata sab define karo
 # @field_validator se custom business logic lagao
+
+# --- NESTED MODEL: Address ---
+class Address(BaseModel):
+    city: str
+    state: str
+    pincode: Annotated[int, Field(gt=100000, lt=999999)]  # 6 digit pincode validation
 
 class Patient(BaseModel):
     # --- name: required, max 50 chars, hamesha UPPERCASE store hoga ---
     name: Annotated[str, Field(
         max_length=50,
-        title="Patient Name",
-        description="Patient ka full name, 50 chars max. Auto-uppercase hota hai.",
-        examples=["Nitish", "Amit"]
+        description="Name of the patient",
+        examples=["Nitish"]   # Swagger UI ke liye example
     )]
+
+    # --- gender: optional with default value ---
+    gender: str = 'Male'
 
     # --- age: required, 0 < age < 120 ---
     age: Annotated[int, Field(
@@ -37,16 +45,19 @@ class Patient(BaseModel):
     # --- weight: strictly float only ---
     weight: Annotated[float, Field(
         gt=0,
-        strict=True,       # "75.2" string REJECT — sirf float chalega
+        strict=True,       # "75.2" string REJECT - sirf float chalega
         description="Weight in kg"
     )]
 
-    height: float           # simple field — bas float type chahiye
+    height: float           # simple field - bas float type chahiye
 
     married: Annotated[bool, Field(
-        default=False,      # optional — na bhejo toh False rahega
+        default=False,      # optional - na bhejo toh False rahega
         description="Is the patient married or not"
     )]
+
+    # --- address: nested model ---
+    address: Address
 
     # --- email: required, hdfc.com ya icici.com domain chahiye ---
     email: str
@@ -62,14 +73,14 @@ class Patient(BaseModel):
     )]
 
     # ============================================================
-    # FIELD VALIDATORS — Custom Business Logic
+    # FIELD VALIDATORS - Custom Business Logic
     # ============================================================
     # field_validator = kisi EK field pe custom validation ya transformation
     # 4 cheezein yaad rakhni hain:
-    #   1. @field_validator('field_name') — decorator mein field ka naam
-    #   2. @classmethod — hamesha likhna hai
-    #   3. cls, value — method ko class + field ki value milti hai
-    #   4. return value — HAMESHA value return karo!
+    #   1. @field_validator('field_name') - decorator mein field ka naam
+    #   2. @classmethod - hamesha likhna hai
+    #   3. cls, value - method ko class + field ki value milti hai
+    #   4. return value - HAMESHA value return karo!
 
     # --- Validator 1: Email domain check ---
     # Business rule: Sirf hdfc.com ya icici.com wale employees ka ilaj hoga
@@ -77,7 +88,7 @@ class Patient(BaseModel):
     @classmethod
     def validate_email_domain(cls, value):
         valid_domains = ['hdfc.com', 'icici.com']
-        domain = value.split('@')[-1]        # "abc@hdfc.com" → "hdfc.com"
+        domain = value.split('@')[-1]        # "abc@hdfc.com"  "hdfc.com"
         if domain not in valid_domains:
             raise ValueError(f'Invalid domain "{domain}". Only {valid_domains} allowed.')
         return value    # sab theek hai toh value wapas return karo
@@ -87,11 +98,11 @@ class Patient(BaseModel):
     @field_validator('name')
     @classmethod
     def transform_name_to_upper(cls, value):
-        return value.upper()    # "nitish" → "NITISH"
+        return value.upper()    # "nitish"  "NITISH"
 
     # --- Validator 3: Age range check (mode demo) ---
-    # mode='after' (default) → type coercion ke BAAD value milti hai (int milega)
-    # mode='before' → type coercion ke PEHLE raw value milti hai (string mil sakta hai)
+    # mode='after' (default)  type coercion ke BAAD value milti hai (int milega)
+    # mode='before'  type coercion ke PEHLE raw value milti hai (string mil sakta hai)
     @field_validator('age', mode='after')
     @classmethod
     def validate_age_range(cls, value):
@@ -100,7 +111,7 @@ class Patient(BaseModel):
         return value
 
     # ============================================================
-    # MODEL VALIDATORS — Multi-field Validation
+    # MODEL VALIDATORS - Multi-field Validation
     # ============================================================
     # model_validator = jab validation multiple fields pe depend kare
     # Example: Agar age > 60, toh emergency contact zaroori hai
@@ -114,7 +125,7 @@ class Patient(BaseModel):
         return model
 
     # ============================================================
-    # COMPUTED FIELDS — Dynamic Calculation
+    # COMPUTED FIELDS - Dynamic Calculation
     # ============================================================
     # computed_field = aisi field jo baki fields se calculate hoti hai
     # Example: BMI (Body Mass Index) from weight and height
@@ -145,20 +156,25 @@ def insert_patient(patient: Patient):
     print("Inserted into database!\n")
 
 def update_patient(patient: Patient):
-    """Same model reuse — no duplicate validation code!"""
+    """Same model reuse - no duplicate validation code!"""
     print(f"Updating record for: {patient.name}")
     print("Updated in database!\n")
 
 
 # --- Correct data: sabkuch sahi ---
 patient_info = {
-    'name': 'nitish',               # lowercase diya — validator UPPERCASE bana dega
+    'name': 'nitish',               # lowercase diya - validator UPPERCASE bana dega
     'age': 25,
-    'weight': 65.0,                 # strict=True hai — "65.0" string doge toh ERROR
+    'weight': 65.0,                 # strict=True hai - "65.0" string doge toh ERROR
     'height': 1.65,
     'married': False,
-    'email': 'nitish@hdfc.com',     # hdfc.com domain — VALID
-    'contacts': {'phone': '1234567890'}
+    'email': 'nitish@hdfc.com',     # hdfc.com domain - VALID
+    'contacts': {'phone': '1234567890'},
+    'address': {                    # Nested dictionary - Pydantic auto-convert karega
+        'city': 'Gurgaon',
+        'state': 'Haryana',
+        'pincode': 122001
+    }
     # allergies nahi diya -> default None (optional hai)
 }
 
@@ -171,9 +187,40 @@ insert_patient(patient1)
 print("--- Update Patient ---")
 update_patient(patient1)
 
+# ============================================================
+# EXPORTING DATA - model_dump()
+# ============================================================
+# Pydantic object ko wapas dictionary mein convert karna
+print("--- Exporting to Dictionary ---")
+patient_dict = patient1.model_dump()
+print(f"Data Type : {type(patient_dict)}")
+print(f"Name from dict: {patient_dict['name']}")
+print(f"City from dict: {patient_dict['address']['city']}")
+print(f"Full Dict : {patient_dict}\n")
+
+# Pydantic object ko json string mein convert karna
+print("--- Exporting to JSON String ---")
+patient_json = patient1.model_dump_json()
+print(f"Data Type : {type(patient_json)}")
+print(f"Full JSON : {patient_json}\n")
+
+print("--- Data Filtering Exports ---")
+# Sirf name chahiye
+print(f"Include (Name only): {patient1.model_dump(include={'name'})}")
+
+# Name aur age hatake baaki sab chahiye
+print(f"Exclude (Name, Age): {patient1.model_dump(exclude={'name', 'age'})}")
+
+# Nested Address se state exclude karna
+print(f"Exclude Nested (State): {patient1.model_dump(exclude={'address': {'state'}})}")
+
+# Jo explicitly set nahi hue unhe hatao (e.g. default gender)
+# humne create karte time gender pass nahi kiya tha, to wo hide ho jayega
+print(f"Exclude Unset: {patient1.model_dump(exclude_unset=True)}")
+
 
 # ============================================================
-# EXPERIMENTS: Uncomment karke try karo — ERROR dekhoge!
+# EXPERIMENTS: Uncomment karke try karo - ERROR dekhoge!
 # ============================================================
 
 # --- Galat email domain ---
@@ -186,7 +233,7 @@ update_patient(patient1)
 
 # --- Weight string mein (strict=True) ---
 # Patient(**{**patient_info, 'weight': "65.0"})
-# ^ ValidationError: float expected (strict mode — string convert nahi karega)
+# ^ ValidationError: float expected (strict mode - string convert nahi karega)
 
 # --- Required field missing ---
 # Patient(name='Nitish', age=25)
